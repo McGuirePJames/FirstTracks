@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Linq;
 
 namespace FirstTracks.Web.Controllers
 {
@@ -7,6 +9,7 @@ namespace FirstTracks.Web.Controllers
 		[Route("/")]
 		public IActionResult Index()
 		{
+
 			return View("~/Views/Home.cshtml");
 		}
 	}

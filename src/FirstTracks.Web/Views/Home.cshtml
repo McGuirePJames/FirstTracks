@@ -13,6 +13,6 @@
 }
 
 @section AddToBody{
-    <script src="~/bundles/Home.bundle.js"></script>
-    <script src="~/bundles/vendors~Home.bundle.js"></script>
+    <script src="@System.String.Format("/bundles/{0}", System.IO.Path.GetFileName(System.IO.Directory.EnumerateFiles("wwwroot/bundles").Where(x => System.IO.Path.GetFileName(x).StartsWith("Home.bundle.")).FirstOrDefault()))"></script>
+    <script src="@System.String.Format("/bundles/{0}", System.IO.Path.GetFileName(System.IO.Directory.EnumerateFiles("wwwroot/bundles").Where(x => System.IO.Path.GetFileName(x).StartsWith("vendors~Home.bundle.")).FirstOrDefault()))"></script>
 }

@@ -18,13 +18,13 @@ const optimization = {
 
 module.exports = {
     entry: {
-        Home: ["@babel/polyfill", "./Scripts/Entries/Home/HomeEntry.tsx", "./Scripts/Entries/Home/_homeEntry.scss"]
+        Home: ["./Scripts/Entries/Home/HomeEntry.tsx", "./Scripts/Entries/Home/_homeEntry.scss"]
     },
     resolve: {
         extensions: ['.ts', '.tsx', ".js", ".jsx", ".json"]
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].bundle.[chunkhash].js',
         path: __dirname + '/wwwroot/bundles/',
         jsonpFunction: 'webpackJsonp'
     },
