@@ -5,15 +5,15 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8163BAD-A793-4F14-9A79-16B35830CD74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Web", "FirstTracks.web\FirstTracks.Web.csproj", "{8BA76B52-50EB-4384-A638-1EF956FDACBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Web", "src\FirstTracks.Web\FirstTracks.Web.csproj", "{8BA76B52-50EB-4384-A638-1EF956FDACBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Core", "FirstTracks.Core\FirstTracks.Core.csproj", "{F0A57E2D-2CFA-4591-A8A7-D7247CFFB011}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Core", "src\FirstTracks.Core\FirstTracks.Core.csproj", "{F0A57E2D-2CFA-4591-A8A7-D7247CFFB011}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Service", "FirstTracks.Service\FirstTracks.Service.csproj", "{F68BBC7B-E3EE-4597-851A-C677E409F329}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Service", "src\FirstTracks.Service\FirstTracks.Service.csproj", "{F68BBC7B-E3EE-4597-851A-C677E409F329}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Repo", "FirstTracks.Repo\FirstTracks.Repo.csproj", "{F10322A5-320A-4ABF-9D80-3D5DF539D0E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Repo", "src\FirstTracks.Repo\FirstTracks.Repo.csproj", "{F10322A5-320A-4ABF-9D80-3D5DF539D0E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Api", "FirstTracks.Api\FirstTracks.Api.csproj", "{38565608-9380-432B-B9F5-450EBF7B9F4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTracks.Api", "src\FirstTracks.Api\FirstTracks.Api.csproj", "{38565608-9380-432B-B9F5-450EBF7B9F4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
