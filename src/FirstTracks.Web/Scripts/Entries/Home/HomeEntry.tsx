@@ -1,5 +1,8 @@
-﻿console.log('hello world');
+﻿import HomeHOC from "../../HOCs/Home/HomeHOC";
+import React from "react";
+import ReactDOM from "react-dom";
 
-export interface bla {
-    helloWorld: string;
-}
+ReactDOM.render(
+    <HomeHOC />,
+    document.getElementById('mount')!
+);

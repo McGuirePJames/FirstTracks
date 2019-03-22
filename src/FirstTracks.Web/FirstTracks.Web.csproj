@@ -8,16 +8,17 @@
   <ItemGroup>
     <None Remove="Scripts\Components\Button\Button.tsx" />
     <None Remove="Scripts\Entries\Home\HomeEntry.tsx" />
+    <None Remove="Scripts\HOCs\Home\HomeHOC.tsx" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Scripts\HOCs\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
@@ -27,6 +28,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\Components\Button\Button.tsx" />
     <TypeScriptCompile Include="Scripts\Entries\Home\HomeEntry.tsx" />
+    <TypeScriptCompile Include="Scripts\HOCs\Home\HomeHOC.tsx" />
   </ItemGroup>
 
   <ItemGroup>

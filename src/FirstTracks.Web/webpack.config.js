@@ -4,7 +4,6 @@ require('file-loader');
 require("@babel/polyfill");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-
 const optimization = {
     splitChunks: {
         chunks: "all",
@@ -25,7 +24,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', ".js", ".jsx", ".json"]
     },
     output: {
-        filename: '[name].[chunkhash].bundle.js',
+        filename: '[name].bundle.js',
         path: __dirname + '/wwwroot/bundles/',
         jsonpFunction: 'webpackJsonp'
     },
@@ -38,9 +37,8 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin()
     ],
-
     module: {
         rules: [
             {

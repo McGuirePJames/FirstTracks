@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FirstTracks</title>
+    @if (IsSectionDefined("AddToHead"))
+    {
+        @RenderSection("AddToHead", required: false)
+    }
 </head>
 <body>
-    @RenderSection("Scripts", required: false)
+    @RenderBody()
+
+    @if (IsSectionDefined("AddToBody"))
+    {
+        @RenderSection("AddToBody", required: false)
+    }
 </body>
 </html>

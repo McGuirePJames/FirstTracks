@@ -17,16 +17,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var Button = /** @class */ (function (_super) {
-    __extends(Button, _super);
-    function Button(props) {
+var HomeHOC = /** @class */ (function (_super) {
+    __extends(HomeHOC, _super);
+    function HomeHOC(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {};
         return _this;
     }
-    Button.prototype.render = function () {
+    HomeHOC.prototype.render = function () {
         return (react_1.default.createElement("div", null, "Hello World"));
     };
-    return Button;
+    return HomeHOC;
 }(react_1.default.Component));
-exports.Button = Button;
+exports.HomeHOC = HomeHOC;
+exports.default = HomeHOC;

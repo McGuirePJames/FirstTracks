@@ -8,7 +8,7 @@ export interface State {
 
 }
 
-export class Button extends React.Component<Props, State>{
+export class HomeHOC extends React.Component<Props, State>{
     constructor(props: Props) {
         super(props);
 
@@ -25,3 +25,5 @@ export class Button extends React.Component<Props, State>{
         )
     }
 }
+
+export default HomeHOC

@@ -1,3 +1,1 @@
-export interface bla {
-    helloWorld: string;
-}
+export {};
