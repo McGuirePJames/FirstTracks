@@ -26,6 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FirstTracks.Core\FirstTracks.Core.csproj" />
+    <ProjectReference Include="..\FirstTracks.Repo\FirstTracks.Repo.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="Scripts\Components\Button\Button.tsx" />
     <TypeScriptCompile Include="Scripts\Entries\Home\HomeEntry.tsx" />
     <TypeScriptCompile Include="Scripts\HOCs\Home\HomeHOC.tsx" />

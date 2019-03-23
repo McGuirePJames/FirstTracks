@@ -19,8 +19,8 @@ export class HomeHOC extends React.Component<Props, State>{
 
     public render(): ReactElement<HTMLDivElement> {
         return (
-            <div>
-                Hello World
+            <div className="home-hoc">
+
             </div>
         )
     }

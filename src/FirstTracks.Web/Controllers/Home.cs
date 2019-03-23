@@ -9,7 +9,6 @@ namespace FirstTracks.Web.Controllers
 		[Route("/")]
 		public IActionResult Index()
 		{
-
 			return View("~/Views/Home.cshtml");
 		}
 	}
