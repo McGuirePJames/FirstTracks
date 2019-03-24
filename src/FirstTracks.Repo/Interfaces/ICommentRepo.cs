@@ -1,14 +1,15 @@
 ﻿using FirstTracks.Core.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FirstTracks.Repo.Interfaces
 {
 	public interface ICommentRepo
 	{
-		void CreateComment(string userId, string comment);
-		Comment GetComment(string commentId);
-		List<Comment> GetComments(string commentId);
-		void DeleteComment(string commentId);
-		void UpdateComment(string commentId);
+		Task CreateCommentAsync(string userId, string comment);
+		Task<Comment> GetCommentAsync(string commentId);
+		Task<List<Comment>> GetCommentsAsync(string commentId);
+		Task DeleteCommentAsync(string commentId);
+		Task UpdateCommentAsync(string commentId);
 	}
 }

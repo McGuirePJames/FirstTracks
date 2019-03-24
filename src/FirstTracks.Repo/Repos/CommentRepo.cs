@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
+using Dapper;
 using FirstTracks.Core.Models;
 using FirstTracks.Repo.Interfaces;
 using Microsoft.Extensions.Options;
@@ -15,28 +18,38 @@ namespace FirstTracks.Repo.Repos
 			this._connectionStrings = options.Value;
 		}
 
-		public void CreateComment(string userId, string comment)
+		public async Task CreateCommentAsync(string userId, string comment)
 		{
 			string sqlQuery = "INSERT INTO Comment " +
-							  "VALUES()";
+							  "VALUES(@UserId, @Comment)";
+
+			using(SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
+			{
+				await conn.OpenAsync();
+
+				conn.Execute(sqlQuery, new
+				{
+					Comment = comment
+				});
+			};
 		}
 
-		public void DeleteComment(string commentId)
+		public async Task DeleteCommentAsync(string commentId)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public Comment GetComment(string commentId)
+		public async Task<Comment> GetCommentAsync(string commentId)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public List<Comment> GetComments(string commentId)
+		public async Task<List<Comment>> GetCommentsAsync(string commentId)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public void UpdateComment(string commentId)
+		public async Task UpdateCommentAsync(string commentId)
 		{
 			throw new System.NotImplementedException();
 		}
