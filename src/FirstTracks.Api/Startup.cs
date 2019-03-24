@@ -30,14 +30,17 @@ namespace FirstTracks.Api
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			#region DI
+
 			services.AddDbContext<ApplicationDbContext>(options =>
-			options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetValue<string>("FirstTracksDb")));
+				options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetValue<string>("FirstTracksDb")));
 
 			services.AddIdentity<ApplicationUser, IdentityRole>()
 				.AddEntityFrameworkStores<ApplicationDbContext>()
 				.AddDefaultTokenProviders();
 
-			#region DI
+			services.Configure<ConnectionStrings>(x => x.FirstTracksDB = Configuration.GetSection("ConnectionStrings").GetValue<string>("FirstTracksDb"));
+
 			services.AddScoped<IAccountService, AccountService>();
 			services.AddScoped<IAccountRepo, AccountRepo>();
 			#endregion
