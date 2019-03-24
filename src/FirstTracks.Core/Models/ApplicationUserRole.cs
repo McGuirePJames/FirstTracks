@@ -2,7 +2,7 @@
 
 namespace FirstTracks.Core.Models
 {
-	public class ApplicationUser : IdentityUser
+	class ApplicationUserRole : IdentityUserRole<string>
 	{
 	}
 }

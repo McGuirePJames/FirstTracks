@@ -17,15 +17,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var request_1 = require("../../Common/request");
 var HomeHOC = /** @class */ (function (_super) {
     __extends(HomeHOC, _super);
     function HomeHOC(props) {
         var _this = _super.call(this, props) || this;
+        _this.createUser = function () {
+            var parameters = {
+                type: "POST",
+                url: "https://localhost:44347/api/Account/CreateUser",
+                data: [{ "emailAddress": "HelloWorld@bla.com" }, { "password": "SuperSecurePassword1234!" }],
+                headers: null
+            };
+            request_1.request(parameters).then(function (response) {
+                console.log(response.response);
+            });
+        };
         _this.state = {};
         return _this;
     }
     HomeHOC.prototype.render = function () {
-        return (react_1.default.createElement("div", null, "Hello World"));
+        var _this = this;
+        return (react_1.default.createElement("div", { className: "home-hoc" },
+            react_1.default.createElement("button", { type: "button", onClick: function () { _this.createUser(); } }, "My Button")));
     };
     return HomeHOC;
 }(react_1.default.Component));

@@ -1,51 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Scripts\Components\Button\Button.tsx" />
-    <None Remove="Scripts\Entries\Home\HomeEntry.tsx" />
-    <None Remove="Scripts\HOCs\Home\HomeHOC.tsx" />
+    <None Remove="Scripts\Common\request.ts" />
   </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\lib\" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FirstTracks.Core\FirstTracks.Core.csproj" />
-    <ProjectReference Include="..\FirstTracks.Repo\FirstTracks.Repo.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\Components\Button\Button.tsx" />
-    <TypeScriptCompile Include="Scripts\Entries\Home\HomeEntry.tsx" />
-    <TypeScriptCompile Include="Scripts\HOCs\Home\HomeHOC.tsx" />
-  </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Shared\_CookieConsentPartial.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Shared\_Layout.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Shared\_ValidationScriptsPartial.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
+    <TypeScriptCompile Include="Scripts\Common\request.ts" />
   </ItemGroup>
 
 </Project>

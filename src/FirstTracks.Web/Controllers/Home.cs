@@ -6,6 +6,11 @@ namespace FirstTracks.Web.Controllers
 {
 	public class Home : Controller
 	{
+		private void CreateUser()
+		{
+
+		}
+
 		[Route("/")]
 		public IActionResult Index()
 		{

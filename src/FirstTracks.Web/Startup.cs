@@ -1,5 +1,5 @@
 ﻿using FirstTracks.Core.Models;
-using FirstTracks.Repo.Repos;
+using FirstTracks.Core.Repos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -19,29 +19,40 @@ namespace FirstTracks.web
 			Configuration = configuration;
 		}
 
+
+		readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 		public IConfiguration Configuration { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddDbContext<ApplicationDbContext>(options =>
-				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-			services.AddIdentity<ApplicationUser, IdentityRole>()
-				.AddEntityFrameworkStores<ApplicationDbContext>();
+			services.AddCors(options =>
+			{
+				options.AddPolicy(MyAllowSpecificOrigins,
+				builder =>
+				{
+					builder.WithOrigins("https://localhost:44391");
+				});
+			});
+
+			#region DI
+
+			#endregion
+
+			#region Identity
+
+			services.AddDbContext<ApplicationDbContext>(options =>
+				options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetValue<string>("FirstTracksDb")));
 
 			services.AddIdentity<ApplicationUser, IdentityRole>()
 				.AddEntityFrameworkStores<ApplicationDbContext>()
 				.AddDefaultTokenProviders();
 
+
 			services.Configure<IdentityOptions>(options =>
 			{
 				// Password settings
-				options.Password.RequireDigit = true;
-				options.Password.RequiredLength = 8;
-				options.Password.RequireNonAlphanumeric = false;
-				options.Password.RequireUppercase = true;
-				options.Password.RequireLowercase = false;
 				options.Password.RequiredUniqueChars = 6;
 
 				// Lockout settings
@@ -74,6 +85,8 @@ namespace FirstTracks.web
 				options.MinimumSameSitePolicy = SameSiteMode.None;
 			});
 
+			#endregion
+
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 		}
 
@@ -93,6 +106,12 @@ namespace FirstTracks.web
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseCookiePolicy();
+
+			app.UseCors(builder => builder
+				.AllowAnyOrigin()
+				.AllowAnyMethod()
+				.AllowAnyHeader()
+				.AllowCredentials());
 
 			app.UseMvc(routes =>
 			{
