@@ -1,2 +1,66 @@
-﻿body {
+﻿@import '../../../Stylesheets/global.scss';
+
+.home-hoc {
+    .welcome {
+        position: relative;
+        height: 600px;
+
+        .welcome__image-container {
+            height: inherit;
+            position: absolute;
+
+            .welcome__image {
+                width: 100%;
+                height: inherit;
+                object-fit: cover;
+            }
+        }
+
+        .welcome__pieces {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            .welcome__navigation {
+                display: flex;
+                position: relative;
+                top: 50px;
+                width: 90%;
+                margin: auto;
+                display: flex;
+
+                .welcome__logo-container {
+                    .welcome__logo {
+                        width: 100px;
+                        height: 50px;
+                        object-fit: cover;
+                    }
+                }
+
+                .welcome__navigation-container {
+                    margin-left: auto;
+                }
+            }
+
+            .welcome__slogan-container {
+                display: inline-block;
+                color: $White;
+                position: relative;
+                top: 175px;
+                font-size: 4rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .welcome__button-container {
+                position: relative;
+                top: 300px;
+
+                button {
+                    display: block;
+                    margin: auto;
+                }
+            }
+        }
+    }
 }

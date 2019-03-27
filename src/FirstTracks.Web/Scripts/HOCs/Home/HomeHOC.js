@@ -20,6 +20,9 @@ var react_1 = __importDefault(require("react"));
 var request_1 = require("../../Common/request");
 require("../../../Stylesheets/global.scss");
 var Button_1 = require("../../Components/Button/Button");
+require("../Home/_homeHOC.scss");
+var NavigationBar_1 = __importDefault(require("../../Components/NavigationBar/NavigationBar"));
+var NavigationLink_1 = require("../../Models/NavigationLink");
 var HomeHOC = /** @class */ (function (_super) {
     __extends(HomeHOC, _super);
     function HomeHOC(props) {
@@ -28,7 +31,10 @@ var HomeHOC = /** @class */ (function (_super) {
             var parameters = {
                 type: "POST",
                 url: "https://localhost:44347/api/Account/CreateUser",
-                data: [{ "emailAddress": "HelloWorld@bla.com" }, { "password": "SuperSecurePassword1234!" }],
+                data: [
+                    { "emailAddress": "HelloWorld@bla.com" },
+                    { "password": "SuperSecurePassword1234!" }
+                ],
                 headers: null
             };
             request_1.request(parameters).then(function (response) {
@@ -40,7 +46,23 @@ var HomeHOC = /** @class */ (function (_super) {
     }
     HomeHOC.prototype.render = function () {
         return (react_1.default.createElement("div", { className: "home-hoc" },
-            react_1.default.createElement(Button_1.Button, { buttonText: "Create User", onClick: this.createUser })));
+            react_1.default.createElement("div", { className: "welcome" },
+                react_1.default.createElement("div", { className: "welcome__image-container" },
+                    react_1.default.createElement("img", { className: "welcome__image", src: "~/wwwroot/images/city.jpg" })),
+                react_1.default.createElement("div", { className: "welcome__pieces" },
+                    react_1.default.createElement("div", { className: "welcome__navigation" },
+                        react_1.default.createElement("div", { className: "welcome__logo-container" },
+                            react_1.default.createElement("img", { className: "welcome__logo", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/1024px-Placeholder_no_text.svg.png" })),
+                        react_1.default.createElement("div", { className: "welcome__navigation-container" },
+                            react_1.default.createElement(NavigationBar_1.default, { navigationItems: [
+                                    new NavigationLink_1.NavigationLink("/Mountains", "Mountains"),
+                                    new NavigationLink_1.NavigationLink("/Forums", "Forums"),
+                                    new NavigationLink_1.NavigationLink("/AboutUs", "About Us")
+                                ] }))),
+                    react_1.default.createElement("div", { className: "welcome__slogan-container" },
+                        react_1.default.createElement("p", { className: "welcome__slogan" }, "My Slogan Here")),
+                    react_1.default.createElement("div", { className: "welcome__button-container" },
+                        react_1.default.createElement(Button_1.Button, { buttonText: "Find Users", onClick: this.createUser }))))));
     };
     return HomeHOC;
 }(react_1.default.Component));

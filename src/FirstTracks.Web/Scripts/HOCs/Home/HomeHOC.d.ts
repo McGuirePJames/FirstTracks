@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import '../../../Stylesheets/global.scss';
+import '../Home/_homeHOC.scss';
 export interface Props {
 }
 export interface State {

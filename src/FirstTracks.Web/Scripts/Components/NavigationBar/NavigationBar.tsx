@@ -25,8 +25,8 @@ export class NavigationBar extends React.Component<Props, State>{
                 {
                     this.props.navigationItems.map((navigationItem: NavigationLink, i:number) => {
                         return (
-                            <div className="item" key={i}>
-                                <a href={navigationItem.href}>{navigationItem.text}</a>
+                            <div className="link-container" key={i}>
+                                <a className="link" href={navigationItem.href}>{navigationItem.text}</a>
                             </div>
                         )
                     })

@@ -42,15 +42,15 @@ export class HomeHOC extends React.Component<Props, State>{
         return (
             <div className="home-hoc">
                 <div className="welcome">
-                    <div className="welcome__image">
-                        <img src="https://www.gannett-cdn.com/media/USATODAY/USATODAY/2012/12/31/guided-backcountry-skiing-16_9.jpg" />
+                    <div className="welcome__image-container">
+                        <img className="welcome__image" src="/images/city.jpg" />
                     </div>
                     <div className="welcome__pieces">
                         <div className="welcome__navigation">
-                            <div className="welcome__logo">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/1024px-Placeholder_no_text.svg.png" />
+                            <div className="welcome__logo-container">
+                                <img className="welcome__logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/1024px-Placeholder_no_text.svg.png" />
                             </div>
-                            <div className="welcome__navigation">
+                            <div className="welcome__navigation-container">
                                 <NavigationBar navigationItems={
                                     [
                                         new NavigationLink("/Mountains", "Mountains"),
@@ -60,10 +60,10 @@ export class HomeHOC extends React.Component<Props, State>{
                                 } />
                             </div>
                         </div>
-                        <div className="welcome__slogan">
-                            <p>My Slogan Here</p>
+                        <div className="welcome__slogan-container">
+                            <p className="welcome__slogan">Be The First On The Slopes</p>
                         </div>
-                        <div className="welcome__button">
+                        <div className="welcome__button-container">
                             <Button buttonText="Find Users" onClick={this.createUser} />
                         </div>
                     </div>

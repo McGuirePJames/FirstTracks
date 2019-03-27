@@ -1,1 +1,19 @@
-﻿
+﻿@import '../../../Stylesheets//Common/_variables.scss';
+
+.navigation-bar {
+    display: flex;
+
+    .link-container {
+        .link {
+            font-size: 2rem;
+            font-weight: 500;
+            color: $White;
+            text-decoration: none;
+        }
+    }
+    .link-container:not(:last-child){
+        .link{
+            margin-right: 30px;
+        }
+    }
+}
