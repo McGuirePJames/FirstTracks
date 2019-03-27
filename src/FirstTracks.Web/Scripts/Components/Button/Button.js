@@ -17,6 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+require("../Button/_button.scss");
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button(props) {
@@ -25,7 +26,8 @@ var Button = /** @class */ (function (_super) {
         return _this;
     }
     Button.prototype.render = function () {
-        return (react_1.default.createElement("div", null, "Hello World"));
+        var _this = this;
+        return (react_1.default.createElement("button", { type: "button", className: "button", onClick: function () { _this.props.onClick(); } }, this.props.buttonText));
     };
     return Button;
 }(react_1.default.Component));

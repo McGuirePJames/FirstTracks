@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import '../../../Stylesheets/global.scss';
 export interface Props {
 }
 export interface State {

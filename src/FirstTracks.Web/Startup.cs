@@ -38,8 +38,6 @@ namespace FirstTracks.web
 
 			#region DI
 
-			#endregion
-
 			#region Identity
 
 			services.AddDbContext<ApplicationDbContext>(options =>
@@ -87,6 +85,7 @@ namespace FirstTracks.web
 
 			#endregion
 
+			#endregion
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 		}
 

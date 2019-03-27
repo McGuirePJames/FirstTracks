@@ -18,6 +18,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var request_1 = require("../../Common/request");
+require("../../../Stylesheets/global.scss");
+var Button_1 = require("../../Components/Button/Button");
 var HomeHOC = /** @class */ (function (_super) {
     __extends(HomeHOC, _super);
     function HomeHOC(props) {
@@ -37,9 +39,8 @@ var HomeHOC = /** @class */ (function (_super) {
         return _this;
     }
     HomeHOC.prototype.render = function () {
-        var _this = this;
         return (react_1.default.createElement("div", { className: "home-hoc" },
-            react_1.default.createElement("button", { type: "button", onClick: function () { _this.createUser(); } }, "My Button")));
+            react_1.default.createElement(Button_1.Button, { buttonText: "Create User", onClick: this.createUser })));
     };
     return HomeHOC;
 }(react_1.default.Component));

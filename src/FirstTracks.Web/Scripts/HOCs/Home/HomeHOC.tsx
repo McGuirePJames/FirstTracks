@@ -1,5 +1,7 @@
 ﻿import React, { ReactElement } from "react";
 import { request, RequestParameters, RequestResponse } from '../../Common/request';
+import '../../../Stylesheets/global.scss';
+import { Button } from "../../Components/Button/Button";
 
 export interface Props {
 
@@ -22,7 +24,10 @@ export class HomeHOC extends React.Component<Props, State>{
         const parameters: RequestParameters = {
             type: "POST",
             url: "https://localhost:44347/api/Account/CreateUser",
-            data: [{ "emailAddress": "HelloWorld@bla.com" }, { "password": "SuperSecurePassword1234!" }],
+            data: [
+                {"emailAddress": "HelloWorld@bla.com" },
+                {"password": "SuperSecurePassword1234!"}
+            ],
             headers: null
         }
         request(parameters).then((response: RequestResponse) => {
@@ -33,7 +38,7 @@ export class HomeHOC extends React.Component<Props, State>{
     public render(): ReactElement<HTMLDivElement> {
         return (
             <div className="home-hoc">
-                <button type="button" onClick={() => { this.createUser() }}>My Button</button>
+                <Button buttonText="Create User" onClick={this.createUser} />
             </div>
         )
     }

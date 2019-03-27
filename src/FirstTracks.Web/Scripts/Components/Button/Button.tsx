@@ -1,7 +1,9 @@
 ﻿import React, { ReactElement } from "react";
+import '../Button/_button.scss';
 
 export interface Props {
-
+    buttonText: string;
+    onClick: Function
 }
 
 export interface State {
@@ -19,9 +21,7 @@ export class Button extends React.Component<Props, State>{
 
     public render(): ReactElement<HTMLDivElement> {
         return (
-            <div>
-                Hello World
-            </div>
+            <button type="button" className="button" onClick={() => { this.props.onClick() }}>{this.props.buttonText}</button>
         )
     }
 }
