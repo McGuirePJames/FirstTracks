@@ -21,7 +21,7 @@ export function getCompleteUrl(url: string, data: object[]) {
 }   
 
 export function request(requestParameters: RequestParameters):Promise<RequestResponse> {
-    return new Promise<RequestResponse>((resolve, reject) => {
+    return new Promise<RequestResponse>((resolve, reject) => {  
         const request: XMLHttpRequest = new XMLHttpRequest();
         request.open(requestParameters.type, requestParameters.data !== null ? getCompleteUrl(requestParameters.url, requestParameters.data) : requestParameters.url, true);
 

@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="Scripts\Common\request.ts" />
+    <None Remove="Scripts\Components\NavigationBar\NavigationBar.tsx" />
+    <None Remove="Scripts\Models\NavigationLink.ts" />
   </ItemGroup>
 
 
@@ -26,6 +28,8 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\Common\request.ts" />
+    <TypeScriptCompile Include="Scripts\Components\NavigationBar\NavigationBar.tsx" />
+    <TypeScriptCompile Include="Scripts\Models\NavigationLink.ts" />
   </ItemGroup>
 
 </Project>
