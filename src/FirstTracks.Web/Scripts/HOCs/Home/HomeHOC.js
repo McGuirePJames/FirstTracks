@@ -48,7 +48,7 @@ var HomeHOC = /** @class */ (function (_super) {
         return (react_1.default.createElement("div", { className: "home-hoc" },
             react_1.default.createElement("div", { className: "welcome" },
                 react_1.default.createElement("div", { className: "welcome__image-container" },
-                    react_1.default.createElement("img", { className: "welcome__image", src: "~/wwwroot/images/city.jpg" })),
+                    react_1.default.createElement("img", { className: "welcome__image", src: "/images/city.jpg" })),
                 react_1.default.createElement("div", { className: "welcome__pieces" },
                     react_1.default.createElement("div", { className: "welcome__navigation" },
                         react_1.default.createElement("div", { className: "welcome__logo-container" },
@@ -60,7 +60,7 @@ var HomeHOC = /** @class */ (function (_super) {
                                     new NavigationLink_1.NavigationLink("/AboutUs", "About Us")
                                 ] }))),
                     react_1.default.createElement("div", { className: "welcome__slogan-container" },
-                        react_1.default.createElement("p", { className: "welcome__slogan" }, "My Slogan Here")),
+                        react_1.default.createElement("p", { className: "welcome__slogan" }, "Be The First On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
                         react_1.default.createElement(Button_1.Button, { buttonText: "Find Users", onClick: this.createUser }))))));
     };

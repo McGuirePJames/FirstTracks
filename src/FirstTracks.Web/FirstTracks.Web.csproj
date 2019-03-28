@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FirstTracks.Core\FirstTracks.Core.csproj" />
+    <ProjectReference Include="..\FirstTracks.Service\FirstTracks.Service.csproj" />
   </ItemGroup>
 
 

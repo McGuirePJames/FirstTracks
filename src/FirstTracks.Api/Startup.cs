@@ -30,48 +30,12 @@ namespace FirstTracks.Api
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			#region DI
-
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetValue<string>("FirstTracksDb")));
 
-			services.AddIdentity<ApplicationUser, IdentityRole>()
-				.AddEntityFrameworkStores<ApplicationDbContext>()
-				.AddDefaultTokenProviders();
-
-			services.Configure<ConnectionStrings>(x => x.FirstTracksDB = Configuration.GetSection("ConnectionStrings").GetValue<string>("FirstTracksDb"));
-
-			services.AddScoped<IAccountService, AccountService>();
-			services.AddScoped<IAccountRepo, AccountRepo>();
-			#endregion
-
-			services.Configure<IdentityOptions>(options =>
-			{
-				// Password settings
-				options.Password.RequiredUniqueChars = 6;
-
-				// Lockout settings
-				options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
-				options.Lockout.MaxFailedAccessAttempts = 10;
-				options.Lockout.AllowedForNewUsers = true;
-
-				// User settings
-				options.User.RequireUniqueEmail = true;
-			});
-
-			services.ConfigureApplicationCookie(options =>
-			{
-				// Cookie settings
-				options.Cookie.HttpOnly = true;
-				options.Cookie.Expiration = TimeSpan.FromDays(150);
-				// If the LoginPath isn't set, ASP.NET Core defaults 
-				// the path to /Account/Login.
-				options.LoginPath = "/Account/Login";
-				// If the AccessDeniedPath isn't set, ASP.NET Core defaults 
-				// the path to /Account/AccessDenied.
-				options.AccessDeniedPath = "/Account/AccessDenied";
-				options.SlidingExpiration = true;
-			});
+			var configHelper = new ConfigureServicesHelper(services, Configuration);
+			configHelper.Configure();
+			configHelper.ConfigureDependencyInjections();
 
 			services.Configure<CookiePolicyOptions>(options =>
 			{
