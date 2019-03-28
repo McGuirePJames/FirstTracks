@@ -61,7 +61,9 @@ export class HomeHOC extends React.Component<Props, State>{
                             </div>
                         </div>
                         <div className="welcome__slogan-container">
-                            <p className="welcome__slogan">Be The First On The Slopes</p>
+                            <p className="welcome__slogan">Be The</p>
+                            <p className="welcome__slogan">First</p>
+                            <p className="welcome__slogan">On The Slopes</p>
                         </div>
                         <div className="welcome__button-container">
                             <Button buttonText="Find Users" onClick={this.createUser} />

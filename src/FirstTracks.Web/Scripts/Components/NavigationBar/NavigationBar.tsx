@@ -1,6 +1,7 @@
 ﻿import '../NavigationBar/_navigationBar.scss';
 import React from 'react';
 import { NavigationLink } from '../../Models/NavigationLink';
+import Link from '../Link/Link';
 
 export interface Props {
     navigationItems: NavigationLink[];
@@ -25,9 +26,7 @@ export class NavigationBar extends React.Component<Props, State>{
                 {
                     this.props.navigationItems.map((navigationItem: NavigationLink, i:number) => {
                         return (
-                            <div className="link-container" key={i}>
-                                <a className="link" href={navigationItem.href}>{navigationItem.text}</a>
-                            </div>
+                            <Link link={navigationItem} key={i} />
                         )
                     })
                 }

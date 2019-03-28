@@ -55,12 +55,14 @@ var HomeHOC = /** @class */ (function (_super) {
                             react_1.default.createElement("img", { className: "welcome__logo", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/1024px-Placeholder_no_text.svg.png" })),
                         react_1.default.createElement("div", { className: "welcome__navigation-container" },
                             react_1.default.createElement(NavigationBar_1.default, { navigationItems: [
-                                    new NavigationLink_1.NavigationLink("/Mountains", "Mountains"),
-                                    new NavigationLink_1.NavigationLink("/Forums", "Forums"),
-                                    new NavigationLink_1.NavigationLink("/AboutUs", "About Us")
+                                    new NavigationLink_1.NavigationLink("/Mountains", "Mountains", null),
+                                    new NavigationLink_1.NavigationLink("/Forums", "Forums", null),
+                                    new NavigationLink_1.NavigationLink("/AboutUs", "About Us", null)
                                 ] }))),
                     react_1.default.createElement("div", { className: "welcome__slogan-container" },
-                        react_1.default.createElement("p", { className: "welcome__slogan" }, "Be The First On The Slopes")),
+                        react_1.default.createElement("p", { className: "welcome__slogan" }, "Be The"),
+                        react_1.default.createElement("p", { className: "welcome__slogan" }, "First"),
+                        react_1.default.createElement("p", { className: "welcome__slogan" }, "On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
                         react_1.default.createElement(Button_1.Button, { buttonText: "Find Users", onClick: this.createUser }))))));
     };

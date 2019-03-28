@@ -1,0 +1,37 @@
+﻿@import '../../../Stylesheets//Common/_variables.scss';
+
+
+.link {
+    a {
+        font-size: 2rem;
+        font-weight: 300;
+        color: $White;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        line-height: 24px;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            transition: transform .35s ease;
+        }
+
+        &:before {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: darken(#ffffff, 10%);
+            transform: translateX(-100%);
+        }
+
+        &:hover:before {
+            transform: translateX(0);
+        }
+    }
+}

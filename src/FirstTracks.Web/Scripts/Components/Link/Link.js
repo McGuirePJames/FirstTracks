@@ -16,22 +16,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("../NavigationBar/_navigationBar.scss");
+require("../Link/_link.scss");
 var react_1 = __importDefault(require("react"));
-var Link_1 = __importDefault(require("../Link/Link"));
-var NavigationBar = /** @class */ (function (_super) {
-    __extends(NavigationBar, _super);
-    function NavigationBar(props) {
+var Link = /** @class */ (function (_super) {
+    __extends(Link, _super);
+    function Link(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {};
         return _this;
     }
-    NavigationBar.prototype.render = function () {
-        return (react_1.default.createElement("div", { className: "navigation-bar" }, this.props.navigationItems.map(function (navigationItem, i) {
-            return (react_1.default.createElement(Link_1.default, { link: navigationItem, key: i }));
-        })));
+    Link.prototype.render = function () {
+        return (react_1.default.createElement("div", { className: "link" },
+            react_1.default.createElement("a", { href: this.props.link.href }, this.props.link.text)));
     };
-    return NavigationBar;
+    return Link;
 }(react_1.default.Component));
-exports.NavigationBar = NavigationBar;
-exports.default = NavigationBar;
+exports.Link = Link;
+exports.default = Link;

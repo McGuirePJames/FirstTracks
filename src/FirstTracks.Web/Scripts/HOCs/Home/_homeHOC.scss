@@ -28,6 +28,7 @@
                 width: 90%;
                 margin: auto;
                 display: flex;
+                align-items: center;
 
                 .welcome__logo-container {
                     .welcome__logo {
@@ -49,7 +50,19 @@
                 top: 175px;
                 font-size: 4rem;
                 left: 50%;
-                transform: translateX(-50%);               
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+
+                .welcome__slogan:nth-child(2) {
+                    font-weight: bold;
+                    text-decoration: underline;
+                    color: $Magenta;
+                }
+
+                .welcome__slogan:not(:last-child) {
+                    margin-right: 0.35em;
+                }
             }
 
             .welcome__button-container {
