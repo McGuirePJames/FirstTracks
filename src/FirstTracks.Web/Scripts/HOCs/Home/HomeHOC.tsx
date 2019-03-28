@@ -53,9 +53,9 @@ export class HomeHOC extends React.Component<Props, State>{
                             <div className="welcome__navigation-container">
                                 <NavigationBar navigationItems={
                                     [
-                                        new NavigationLink("/Mountains", "Mountains"),
-                                        new NavigationLink("/Forums", "Forums"),
-                                        new NavigationLink("/AboutUs", "About Us")
+                                        new NavigationLink("/Mountains", "Mountains", null),
+                                        new NavigationLink("/Forums", "Forums", null),
+                                        new NavigationLink("/AboutUs", "About Us", null)
                                     ]
                                 } />
                             </div>

@@ -5,7 +5,9 @@ html, body {
   width: 100%; }
 
 html body {
-  font-family: "Roboto", sans-serif; }
+  background-color: #F6F7F9;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300; }
 
 .button {
   position: relative;
@@ -29,7 +31,9 @@ html, body {
   width: 100%; }
 
 html body {
-  font-family: "Roboto", sans-serif; }
+  background-color: #F6F7F9;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300; }
 
 .home-hoc .welcome {
   position: relative;
@@ -82,10 +86,10 @@ html body {
   display: flex; }
   .navigation-bar .link-container .link {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 300;
     color: #ffffff;
     text-decoration: none; }
-  .navigation-bar .link-container:not(:last-child) .link {
-    margin-right: 30px; }
+  .navigation-bar .link-container:not(:last-child) {
+    margin-right: 75px; }
 
 

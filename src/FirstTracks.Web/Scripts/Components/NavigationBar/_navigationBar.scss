@@ -6,14 +6,13 @@
     .link-container {
         .link {
             font-size: 2rem;
-            font-weight: 500;
+            font-weight: 300;
             color: $White;
             text-decoration: none;
         }
     }
-    .link-container:not(:last-child){
-        .link{
-            margin-right: 30px;
-        }
+
+    .link-container:not(:last-child) {
+        margin-right: 75px;
     }
 }
