@@ -1,6 +1,7 @@
 ﻿import '../Link/_link.scss';
 import React, { ReactElement } from 'react';
-import { NavigationLink } from '../../Models/NavigationLink';
+import { NavigationLink } from '../../Models/NavigationLink/NavigationLink';
+
 
 export interface Props {
     link: NavigationLink;

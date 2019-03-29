@@ -1,0 +1,38 @@
+﻿.rating-icon-container {
+    .rating-icon-source {
+        position: absolute;
+        width: 0;
+        top: 0;
+    }
+
+    .rating-icons {
+        height: 3em;
+
+        .rating-icon {
+            fill: #48440E;
+            stroke: #48440E;
+            stroke-width: 1;
+            height: 50px;
+        }
+
+        .rating-icon--empty {
+            fill: none;
+        }
+
+        .rating-icon--quarter {
+            fill: url(#quarterGradient);
+        }
+
+        .rating-icon--half {
+            fill: url(#halfGradient);
+        }
+
+        .rating-icon--half-quarter {
+            fill: url(#halfQuarterGradient);
+        }
+
+        .rating-icon--full {
+            fill: url(#fullGradient);
+        }
+    }
+}

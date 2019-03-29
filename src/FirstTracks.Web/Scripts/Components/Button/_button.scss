@@ -12,4 +12,9 @@
     outline: none;
     text-transform: uppercase;
     transition: all .1s;
+    bottom: 0px;
+
+    &:hover{
+        bottom: 2px;
+    }
 }

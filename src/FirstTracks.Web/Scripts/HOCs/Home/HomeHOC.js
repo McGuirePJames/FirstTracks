@@ -22,7 +22,9 @@ require("../../../Stylesheets/global.scss");
 var Button_1 = require("../../Components/Button/Button");
 require("../Home/_homeHOC.scss");
 var NavigationBar_1 = __importDefault(require("../../Components/NavigationBar/NavigationBar"));
-var NavigationLink_1 = require("../../Models/NavigationLink");
+var NavigationLink_1 = require("../../Models/NavigationLink/NavigationLink");
+var SkiResortImageCard_1 = __importDefault(require("../../Components/SkiResortImageCard/SkiResortImageCard"));
+var SkiResort_1 = require("../../Models/SkiResort/SkiResort");
 var HomeHOC = /** @class */ (function (_super) {
     __extends(HomeHOC, _super);
     function HomeHOC(props) {
@@ -64,7 +66,8 @@ var HomeHOC = /** @class */ (function (_super) {
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "First"),
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
-                        react_1.default.createElement(Button_1.Button, { buttonText: "Find Users", onClick: this.createUser }))))));
+                        react_1.default.createElement(Button_1.Button, { buttonText: "Find Users", onClick: this.createUser })))),
+            react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "", 0, [""]) })));
     };
     return HomeHOC;
 }(react_1.default.Component));

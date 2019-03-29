@@ -1,6 +1,6 @@
 import '../NavigationBar/_navigationBar.scss';
 import React from 'react';
-import { NavigationLink } from '../../Models/NavigationLink';
+import { NavigationLink } from '../../Models/NavigationLink/NavigationLink';
 export interface Props {
     navigationItems: NavigationLink[];
 }

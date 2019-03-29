@@ -4,7 +4,9 @@ import '../../../Stylesheets/global.scss';
 import { Button } from "../../Components/Button/Button";
 import '../Home/_homeHOC.scss';
 import NavigationBar from "../../Components/NavigationBar/NavigationBar";
-import { NavigationLink } from "../../Models/NavigationLink";
+import { NavigationLink } from "../../Models/NavigationLink/NavigationLink";
+import SkiResortImageCard from "../../Components/SkiResortImageCard/SkiResortImageCard";
+import { SkiResort } from "../../Models/SkiResort/SkiResort";
 
 export interface Props {
 
@@ -70,6 +72,10 @@ export class HomeHOC extends React.Component<Props, State>{
                         </div>
                     </div>
                 </div>
+                <SkiResortImageCard
+                    skiResort={new SkiResort("Park City", "Park City", "UT", "", 0, [""])
+                    }
+                />
             </div>
         )
     }
