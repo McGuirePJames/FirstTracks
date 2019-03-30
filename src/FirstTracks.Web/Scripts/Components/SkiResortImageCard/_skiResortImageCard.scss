@@ -1,5 +1,77 @@
-﻿.image-card {
-    .image-card__rating{
+﻿@import '../../../Stylesheets/Common/_variables.scss';
+
+.image-card {
+    height: 500px;
+    width: 400px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+    background-color: $White;
+
+    .image-card__image {
+        height: 55%;
+        width: inherit;
+        object-fit: cover;
+    }
+
+    .image-card__details {
+        height: 45%;
         display: flex;
+        flex-direction: column;
+        padding: 0 20px 0 20px;
+
+        .image-card__top {
+            display: flex;
+            height: 33%;
+            align-items: center;
+
+            .image-card__name {
+                margin-right: auto;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+
+            .image-card__rating {
+                margin-left: auto;
+                display: flex;
+            }
+        }
+
+        .image-card__middle {
+            display: flex;
+            height: 33%;
+            align-items: center;
+
+            .image-card__tags {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: auto;
+
+                .image-card__tag {
+                    font-weight: 300;
+                    font-family: "Roboto Condensed";
+                    font-size: 1.2rem;
+                }
+
+                .image-card__tag:not(:last-child):after {
+                    content: "|";
+                    margin-left: 5px;
+                }
+
+                .image-card__tag:not(:first-child) {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .image-card__bottom {
+            display: flex;
+            height: 33%;
+            align-items: center;
+            padding-bottom: 20px;
+
+            .image-card__learn-more {
+                margin-top: auto;
+                margin-left: auto;
+            }
+        }
     }
 }

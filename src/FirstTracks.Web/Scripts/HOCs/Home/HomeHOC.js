@@ -67,7 +67,17 @@ var HomeHOC = /** @class */ (function (_super) {
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
                         react_1.default.createElement(Button_1.Button, { buttonText: "Find Users", onClick: this.createUser })))),
-            react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "", 0, [""]) })));
+            react_1.default.createElement("div", { className: "section" },
+                react_1.default.createElement("h2", { className: "section__title" }, "Recommended Mountains"),
+                react_1.default.createElement("div", { className: "mountains" },
+                    react_1.default.createElement("div", { className: "mountain" },
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) })),
+                    react_1.default.createElement("div", { className: "mountain" },
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) })),
+                    react_1.default.createElement("div", { className: "mountain" },
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) })),
+                    react_1.default.createElement("div", { className: "mountain" },
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) }))))));
     };
     return HomeHOC;
 }(react_1.default.Component));

@@ -72,10 +72,31 @@ export class HomeHOC extends React.Component<Props, State>{
                         </div>
                     </div>
                 </div>
-                <SkiResortImageCard
-                    skiResort={new SkiResort("Park City", "Park City", "UT", "", 0, [""])
-                    }
-                />
+                <div className="section">
+                    <h2 className="section__title">Recommended Mountains</h2>
+                    <div className="mountains">
+                        <div className="mountain">
+                            <SkiResortImageCard
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                            />
+                        </div>
+                        <div className="mountain">
+                            <SkiResortImageCard
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                            />
+                        </div>
+                        <div className="mountain">
+                            <SkiResortImageCard
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                            />
+                        </div>
+                        <div className="mountain">
+                            <SkiResortImageCard
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

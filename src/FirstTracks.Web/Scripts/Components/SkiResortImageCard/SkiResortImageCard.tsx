@@ -28,16 +28,29 @@ export class SkiResortImageCard extends React.Component<Props, State>{
                     <div className="image-card__top">
                         <p className="image-card__name">{this.props.skiResort.name}</p>
                         <div className="image-card__rating">
-                            <RatingIcon filledState={0} />
-                            <RatingIcon filledState={25} />
-                            <RatingIcon filledState={50} />
-                            <RatingIcon filledState={75} />
                             <RatingIcon filledState={100} />
+                            <RatingIcon filledState={100} />
+                            <RatingIcon filledState={100} />
+                            <RatingIcon filledState={50} />
+                            <RatingIcon filledState={0} />
                         </div>
                     </div>
                     <div className="image-card__middle">
+                        <div className="image-card__tags">
+                            {
+                                this.props.skiResort.tags.map((tag: string, i: number) => {
+                                    return (
+                                        <div className="image-card__tag" key={i}>
+                                            {tag}
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+
                     </div>
                     <div className="image-card__bottom">
+                        <button type="button" className="image-card__learn-more">Learn More</button>
                     </div>
                 </div>
             </div>

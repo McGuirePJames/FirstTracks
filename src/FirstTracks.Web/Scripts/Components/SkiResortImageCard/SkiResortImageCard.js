@@ -33,13 +33,17 @@ var SkiResortImageCard = /** @class */ (function (_super) {
                 react_1.default.createElement("div", { className: "image-card__top" },
                     react_1.default.createElement("p", { className: "image-card__name" }, this.props.skiResort.name),
                     react_1.default.createElement("div", { className: "image-card__rating" },
-                        react_1.default.createElement(RatingIcon_1.default, { filledState: 0 }),
-                        react_1.default.createElement(RatingIcon_1.default, { filledState: 25 }),
+                        react_1.default.createElement(RatingIcon_1.default, { filledState: 100 }),
+                        react_1.default.createElement(RatingIcon_1.default, { filledState: 100 }),
+                        react_1.default.createElement(RatingIcon_1.default, { filledState: 100 }),
                         react_1.default.createElement(RatingIcon_1.default, { filledState: 50 }),
-                        react_1.default.createElement(RatingIcon_1.default, { filledState: 75 }),
-                        react_1.default.createElement(RatingIcon_1.default, { filledState: 100 }))),
-                react_1.default.createElement("div", { className: "image-card__middle" }),
-                react_1.default.createElement("div", { className: "image-card__bottom" }))));
+                        react_1.default.createElement(RatingIcon_1.default, { filledState: 0 }))),
+                react_1.default.createElement("div", { className: "image-card__middle" },
+                    react_1.default.createElement("div", { className: "image-card__tags" }, this.props.skiResort.tags.map(function (tag, i) {
+                        return (react_1.default.createElement("div", { className: "image-card__tag", key: i }, tag));
+                    }))),
+                react_1.default.createElement("div", { className: "image-card__bottom" },
+                    react_1.default.createElement("button", { type: "button", className: "image-card__learn-more" }, "Learn More")))));
     };
     return SkiResortImageCard;
 }(react_1.default.Component));
