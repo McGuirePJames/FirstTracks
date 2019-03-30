@@ -15,10 +15,6 @@ html body {
   color: white;
   padding: 0;
   border: 0;
-  width: 300px;
-  height: 55px;
-  border-radius: 100px;
-  font-size: 1.3rem;
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
@@ -26,6 +22,17 @@ html body {
   bottom: 0px; }
   .button:hover {
     bottom: 2px; }
+
+.button.small {
+  width: 100px;
+  height: 30px;
+  font-size: 0.8rem; }
+
+.button.godzilla {
+  width: 300px;
+  height: 55px;
+  font-size: 1.3rem;
+  border-radius: 100px; }
 
 /*Font Families*/
 /*Colors*/
@@ -101,7 +108,8 @@ html body {
   .home-hoc .section .section__title {
     margin: auto;
     font-size: 2.5rem;
-    font-weight: 500; }
+    font-weight: 300;
+    color: #ABABAB; }
   .home-hoc .section .mountains {
     display: flex;
     flex-wrap: wrap;
@@ -201,7 +209,12 @@ html body {
       padding-bottom: 20px; }
       .image-card .image-card__details .image-card__bottom .image-card__learn-more {
         margin-top: auto;
-        margin-left: auto; }
+        margin-left: auto;
+        color: #dd185f;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none; }
 
 .rating-icon-container .rating-icon-source {
   position: absolute;

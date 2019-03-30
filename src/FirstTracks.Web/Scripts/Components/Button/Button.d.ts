@@ -1,8 +1,9 @@
 import React, { ReactElement } from "react";
 import '../Button/_button.scss';
 export interface Props {
-    buttonText: string;
+    text: string;
     onClick: Function;
+    size: "small" | "medium" | "large" | "godzilla";
 }
 export interface State {
 }

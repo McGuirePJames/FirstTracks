@@ -50,7 +50,7 @@ export class SkiResortImageCard extends React.Component<Props, State>{
 
                     </div>
                     <div className="image-card__bottom">
-                        <button type="button" className="image-card__learn-more">Learn More</button>
+                        <a className="image-card__learn-more" href={this.props.skiResort.mountainHref}>Learn More</a>
                     </div>
                 </div>
             </div>

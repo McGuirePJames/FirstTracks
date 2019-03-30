@@ -68,7 +68,7 @@ export class HomeHOC extends React.Component<Props, State>{
                             <p className="welcome__slogan">On The Slopes</p>
                         </div>
                         <div className="welcome__button-container">
-                            <Button buttonText="Find Users" onClick={this.createUser} />
+                            <Button size="godzilla" text="Find Users" onClick={this.createUser} />
                         </div>
                     </div>
                 </div>
@@ -77,22 +77,22 @@ export class HomeHOC extends React.Component<Props, State>{
                     <div className="mountains">
                         <div className="mountain">
                             <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#",0, ["Trees", "Bowls"])}
                             />
                         </div>
                         <div className="mountain">
                             <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
                             />
                         </div>
                         <div className="mountain">
                             <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
                             />
                         </div>
                         <div className="mountain">
                             <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"])}
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
                             />
                         </div>
                     </div>

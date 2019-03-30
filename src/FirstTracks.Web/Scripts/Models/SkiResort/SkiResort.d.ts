@@ -3,7 +3,8 @@ export declare class SkiResort {
     city: string;
     state: string;
     imageFilePath: string;
+    mountainHref: string;
     rating: number;
     tags: string[];
-    constructor(name: string, city: string, state: string, imageFilePath: string, rating: number, tags: string[]);
+    constructor(name: string, city: string, state: string, imageFilePath: string, mountainHref: string, rating: number, tags: string[]);
 }
