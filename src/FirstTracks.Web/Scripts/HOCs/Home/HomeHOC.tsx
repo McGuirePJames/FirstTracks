@@ -1,11 +1,11 @@
-﻿import React, { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { request, RequestParameters, RequestResponse } from '../../Common/request';
 import '../../../Stylesheets/global.scss';
 import { Button } from "../../Components/Button/Button";
 import '../Home/_homeHOC.scss';
-import NavigationBar from "../../Components/NavigationBar/NavigationBar";
+import { NavigationBar } from "../../Components/NavigationBar/NavigationBar";
 import { NavigationLink } from "../../Models/NavigationLink/NavigationLink";
-import SkiResortImageCard from "../../Components/SkiResortImageCard/SkiResortImageCard";
+import { SkiResortImageCard } from "../../Components/SkiResortImageCard/SkiResortImageCard";
 import { SkiResort } from "../../Models/SkiResort/SkiResort";
 
 export interface Props {
@@ -22,7 +22,7 @@ export class HomeHOC extends React.Component<Props, State>{
 
         this.state = {
 
-        }
+        };
     }
 
     //private createUser = (): void => {
@@ -48,10 +48,10 @@ export class HomeHOC extends React.Component<Props, State>{
                 { "commentId": "1" },
             ],
             headers: null
-        }
+        };
         request(parameters).then((response: RequestResponse) => {
             console.log(response.response);
-        })
+        });
     }
 
     public render(): ReactElement<HTMLDivElement> {
@@ -91,7 +91,7 @@ export class HomeHOC extends React.Component<Props, State>{
                     <div className="mountains">
                         <div className="mountain">
                             <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#",0, ["Trees", "Bowls"])}
+                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
                             />
                         </div>
                         <div className="mountain">
@@ -112,8 +112,6 @@ export class HomeHOC extends React.Component<Props, State>{
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
-
-export default HomeHOC

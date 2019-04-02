@@ -1,7 +1,7 @@
-﻿import '../SkiResortImageCard/_skiResortImageCard.scss';
+import '../SkiResortImageCard/_skiResortImageCard.scss';
 import React from 'react';
 import { SkiResort } from '../../Models/SkiResort/SkiResort';
-import RatingIcon from '../RatingIcon/RatingIcon';
+import { RatingIcon } from '../RatingIcon/RatingIcon';
 
 export interface Props {
     skiResort: SkiResort;
@@ -17,7 +17,7 @@ export class SkiResortImageCard extends React.Component<Props, State>{
 
         this.state = {
 
-        }
+        };
     }
 
     public render() {
@@ -43,7 +43,7 @@ export class SkiResortImageCard extends React.Component<Props, State>{
                                         <div className="image-card__tag" key={i}>
                                             {tag}
                                         </div>
-                                    )
+                                    );
                                 })
                             }
                         </div>
@@ -54,8 +54,6 @@ export class SkiResortImageCard extends React.Component<Props, State>{
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
-
-export default SkiResortImageCard

@@ -10,4 +10,3 @@ export declare class HomeHOC extends React.Component<Props, State> {
     private getComments;
     render(): ReactElement<HTMLDivElement>;
 }
-export default HomeHOC;

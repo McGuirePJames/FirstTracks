@@ -10,4 +10,3 @@ export declare class Link extends React.Component<Props, State> {
     constructor(props: Props);
     render(): ReactElement<HTMLDivElement>;
 }
-export default Link;

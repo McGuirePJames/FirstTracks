@@ -5,7 +5,7 @@ var __extends = (this && this.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -18,7 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("../NavigationBar/_navigationBar.scss");
 var react_1 = __importDefault(require("react"));
-var Link_1 = __importDefault(require("../Link/Link"));
+var Link_1 = require("../Link/Link");
 var NavigationBar = /** @class */ (function (_super) {
     __extends(NavigationBar, _super);
     function NavigationBar(props) {
@@ -28,10 +28,10 @@ var NavigationBar = /** @class */ (function (_super) {
     }
     NavigationBar.prototype.render = function () {
         return (react_1.default.createElement("div", { className: "navigation-bar" }, this.props.navigationItems.map(function (navigationItem, i) {
-            return (react_1.default.createElement(Link_1.default, { link: navigationItem, key: i }));
+            return (react_1.default.createElement(Link_1.Link, { link: navigationItem, key: i }));
         })));
     };
     return NavigationBar;
 }(react_1.default.Component));
 exports.NavigationBar = NavigationBar;
-exports.default = NavigationBar;
+//# sourceMappingURL=NavigationBar.js.map

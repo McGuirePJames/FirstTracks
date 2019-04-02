@@ -1,7 +1,7 @@
-﻿import '../NavigationBar/_navigationBar.scss';
+import '../NavigationBar/_navigationBar.scss';
 import React from 'react';
 import { NavigationLink } from '../../Models/NavigationLink/NavigationLink';
-import Link from '../Link/Link';
+import { Link } from '../Link/Link';
 
 export interface Props {
     navigationItems: NavigationLink[];
@@ -17,22 +17,21 @@ export class NavigationBar extends React.Component<Props, State>{
 
         this.state = {
 
-        }
+        };
     }
 
-    public render(){
+    public render() {
         return (
             <div className="navigation-bar">
                 {
-                    this.props.navigationItems.map((navigationItem: NavigationLink, i:number) => {
+                    this.props.navigationItems.map((navigationItem: NavigationLink, i: number) => {
                         return (
                             <Link link={navigationItem} key={i} />
-                        )
+                        );
                     })
                 }
             </div>
-        )
+        );
     }
 }
 
-export default NavigationBar

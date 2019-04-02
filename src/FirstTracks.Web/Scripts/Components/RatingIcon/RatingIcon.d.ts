@@ -13,4 +13,3 @@ export declare class RatingIcon extends React.Component<Props, State> {
     componentDidMount(): void;
     render(): ReactElement<HTMLElement>;
 }
-export default RatingIcon;

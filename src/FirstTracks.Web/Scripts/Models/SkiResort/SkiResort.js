@@ -13,3 +13,4 @@ var SkiResort = /** @class */ (function () {
     return SkiResort;
 }());
 exports.SkiResort = SkiResort;
+//# sourceMappingURL=SkiResort.js.map

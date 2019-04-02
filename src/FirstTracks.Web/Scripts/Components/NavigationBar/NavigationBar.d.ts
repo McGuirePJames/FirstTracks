@@ -10,4 +10,3 @@ export declare class NavigationBar extends React.Component<Props, State> {
     constructor(props: Props);
     render(): JSX.Element;
 }
-export default NavigationBar;

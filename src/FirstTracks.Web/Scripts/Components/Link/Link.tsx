@@ -1,4 +1,4 @@
-﻿import '../Link/_link.scss';
+import '../Link/_link.scss';
 import React, { ReactElement } from 'react';
 import { NavigationLink } from '../../Models/NavigationLink/NavigationLink';
 
@@ -17,7 +17,7 @@ export class Link extends React.Component<Props, State>{
 
         this.state = {
 
-        }
+        };
     }
 
     public render(): ReactElement<HTMLDivElement> {
@@ -25,8 +25,6 @@ export class Link extends React.Component<Props, State>{
             <div className="link">
                 <a href={this.props.link.href}>{this.props.link.text}</a>
             </div>
-        )
+        );
     }
 }
-
-export default Link

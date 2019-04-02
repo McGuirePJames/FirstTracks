@@ -1,8 +1,8 @@
 ﻿export interface RequestParameters {
     url: string;
     type: "POST" | "GET";
-    data: object[] | null,
-    headers: object[] | null
+    data: object[] | null;
+    headers: object[] | null;
 }
 
 export interface RequestResponse {
@@ -11,10 +11,10 @@ export interface RequestResponse {
 }
 
 export function getCompleteUrl(url: string, data: object[]) {
-    var newUrl: URL = new URL(url);
+    const newUrl: URL = new URL(url);
 
     data.forEach((keyValue: object) => {
-        newUrl.searchParams.append(Object.keys(keyValue)[0], keyValue[Object.keys(keyValue)[0]])
+        newUrl.searchParams.append(Object.keys(keyValue)[0], keyValue[Object.keys(keyValue)[0]]);
     });
 
     return newUrl.href;
@@ -27,8 +27,8 @@ export function request(requestParameters: RequestParameters):Promise<RequestRes
 
         if (requestParameters.headers) {
             Object.keys(requestParameters.headers).forEach((key: string) => {
-                request.setRequestHeader(key, requestParameters.headers![key])
-            })
+                request.setRequestHeader(key, requestParameters.headers![key]);
+            });
         }
 
         request.onload = () => {
@@ -36,13 +36,13 @@ export function request(requestParameters: RequestParameters):Promise<RequestRes
                 resolve({
                     status: request.status,
                     response: request.response
-                })
+                });
             }
             else {
                 reject({
                     status: request.status,
                     response: request.response
-                })
+                });
             }
 
         };

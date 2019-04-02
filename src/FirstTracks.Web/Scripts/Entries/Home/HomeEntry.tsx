@@ -1,4 +1,4 @@
-﻿import HomeHOC from "../../HOCs/Home/HomeHOC";
+﻿import { HomeHOC } from "../../HOCs/Home/HomeHOC";
 import React from "react";
 import ReactDOM from "react-dom";
 

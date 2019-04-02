@@ -5,7 +5,7 @@ var __extends = (this && this.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -21,9 +21,9 @@ var request_1 = require("../../Common/request");
 require("../../../Stylesheets/global.scss");
 var Button_1 = require("../../Components/Button/Button");
 require("../Home/_homeHOC.scss");
-var NavigationBar_1 = __importDefault(require("../../Components/NavigationBar/NavigationBar"));
+var NavigationBar_1 = require("../../Components/NavigationBar/NavigationBar");
 var NavigationLink_1 = require("../../Models/NavigationLink/NavigationLink");
-var SkiResortImageCard_1 = __importDefault(require("../../Components/SkiResortImageCard/SkiResortImageCard"));
+var SkiResortImageCard_1 = require("../../Components/SkiResortImageCard/SkiResortImageCard");
 var SkiResort_1 = require("../../Models/SkiResort/SkiResort");
 var HomeHOC = /** @class */ (function (_super) {
     __extends(HomeHOC, _super);
@@ -69,7 +69,7 @@ var HomeHOC = /** @class */ (function (_super) {
                         react_1.default.createElement("div", { className: "welcome__logo-container" },
                             react_1.default.createElement("img", { className: "welcome__logo", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/1024px-Placeholder_no_text.svg.png" })),
                         react_1.default.createElement("div", { className: "welcome__navigation-container" },
-                            react_1.default.createElement(NavigationBar_1.default, { navigationItems: [
+                            react_1.default.createElement(NavigationBar_1.NavigationBar, { navigationItems: [
                                     new NavigationLink_1.NavigationLink("/Mountains", "Mountains", null),
                                     new NavigationLink_1.NavigationLink("/Forums", "Forums", null),
                                     new NavigationLink_1.NavigationLink("/AboutUs", "About Us", null)
@@ -84,15 +84,15 @@ var HomeHOC = /** @class */ (function (_super) {
                 react_1.default.createElement("h2", { className: "section__title" }, "Recommended Mountains"),
                 react_1.default.createElement("div", { className: "mountains" },
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
+                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
+                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
+                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) }))))));
+                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) }))))));
     };
     return HomeHOC;
 }(react_1.default.Component));
 exports.HomeHOC = HomeHOC;
-exports.default = HomeHOC;
+//# sourceMappingURL=HomeHOC.js.map

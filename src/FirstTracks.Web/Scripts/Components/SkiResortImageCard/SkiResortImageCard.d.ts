@@ -10,4 +10,3 @@ export declare class SkiResortImageCard extends React.Component<Props, State> {
     constructor(props: Props);
     render(): JSX.Element;
 }
-export default SkiResortImageCard;
