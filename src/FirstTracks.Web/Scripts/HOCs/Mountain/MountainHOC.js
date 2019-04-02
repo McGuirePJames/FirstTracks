@@ -17,19 +17,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-require("../Button/_button.scss");
-var Button = /** @class */ (function (_super) {
-    __extends(Button, _super);
-    function Button(props) {
+require("../../../Stylesheets/global.scss");
+require("../Mountain/_mountain.scss");
+var MountainHOC = /** @class */ (function (_super) {
+    __extends(MountainHOC, _super);
+    function MountainHOC(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {};
         return _this;
     }
-    Button.prototype.render = function () {
-        var _this = this;
-        return (react_1.default.createElement("button", { type: "button", className: "button " + this.props.size, onClick: function () { _this.props.onClick(); } }, this.props.text));
+    MountainHOC.prototype.render = function () {
+        return (react_1.default.createElement("div", { className: "mountain-hoc" }));
     };
-    return Button;
+    return MountainHOC;
 }(react_1.default.Component));
-exports.Button = Button;
-//# sourceMappingURL=Button.js.map
+exports.MountainHOC = MountainHOC;
+//# sourceMappingURL=MountainHOC.js.map

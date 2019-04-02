@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.IO;
-using System.Linq;
 
 namespace FirstTracks.Web.Controllers
 {
-	public class Home : Controller
+	public class HomeController : Controller
 	{
 		private void CreateUser()
 		{

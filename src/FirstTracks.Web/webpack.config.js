@@ -6,19 +6,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const optimization = {
     splitChunks: {
+        name:"vendor",
         chunks: "all",
-        cacheGroups: {
-            utilities: {
-                test: /[\\/]src[\\/]utilities[\\/]/,
-                minSize: 0
-            }
-        }
     }
 };
 
 module.exports = {
     entry: {
-        Home: ["./Scripts/Entries/Home/HomeEntry.tsx", "./Scripts/Entries/Home/_homeEntry.scss"]
+        Home: ["@babel/polyfill", "./Scripts/Entries/Home/HomeEntry.tsx", "./Scripts/Entries/Home/_homeEntry.scss"],
+        Mountain: ["@babel/polyfill", "./Scripts/Entries/Mountain/MountainEntry.tsx", "./Scripts/Entries/Mountain/_mountainEntry.scss"]
     },
     resolve: {
         extensions: ['.ts', '.tsx', ".js", ".jsx", ".json"]
