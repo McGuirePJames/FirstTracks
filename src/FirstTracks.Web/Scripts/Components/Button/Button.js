@@ -27,7 +27,7 @@ var Button = /** @class */ (function (_super) {
     }
     Button.prototype.render = function () {
         var _this = this;
-        return (react_1.default.createElement("button", { type: "button", className: "button", onClick: function () { _this.props.onClick(); } }, this.props.buttonText));
+        return (react_1.default.createElement("button", { type: "button", className: "button " + this.props.size, onClick: function () { _this.props.onClick(); } }, this.props.text));
     };
     return Button;
 }(react_1.default.Component));

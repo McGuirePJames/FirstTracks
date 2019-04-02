@@ -43,7 +43,7 @@ var SkiResortImageCard = /** @class */ (function (_super) {
                         return (react_1.default.createElement("div", { className: "image-card__tag", key: i }, tag));
                     }))),
                 react_1.default.createElement("div", { className: "image-card__bottom" },
-                    react_1.default.createElement("button", { type: "button", className: "image-card__learn-more" }, "Learn More")))));
+                    react_1.default.createElement("a", { className: "image-card__learn-more", href: this.props.skiResort.mountainHref }, "Learn More")))));
     };
     return SkiResortImageCard;
 }(react_1.default.Component));

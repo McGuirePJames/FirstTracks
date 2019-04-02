@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FirstTracks.Api.Controllers
 {
-	[Route("/api/[controller]")]
+	[Route("/api/[controller]/[action]")]
     [ApiController]
     public class CommentController : ControllerBase
     {
@@ -21,6 +21,7 @@ namespace FirstTracks.Api.Controllers
 			return Ok();
 		}
 
+		[HttpGet]
 		public IActionResult GetComment(string commentId)
 		{
 			return Ok();

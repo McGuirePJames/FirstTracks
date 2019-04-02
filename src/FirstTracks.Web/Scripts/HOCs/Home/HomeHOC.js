@@ -29,13 +29,26 @@ var HomeHOC = /** @class */ (function (_super) {
     __extends(HomeHOC, _super);
     function HomeHOC(props) {
         var _this = _super.call(this, props) || this;
-        _this.createUser = function () {
+        //private createUser = (): void => {
+        //    const parameters: RequestParameters = {
+        //        type: "POST",
+        //        url: "https://localhost:44347/api/Account/CreateUser",
+        //        data: [
+        //            { "emailAddress": "HelloWorld@bla.com" },
+        //            { "password": "SuperSecurePassword1234!" }
+        //        ],
+        //        headers: null
+        //    }
+        //    request(parameters).then((response: RequestResponse) => {
+        //        console.log(response.response);
+        //    })
+        //}
+        _this.getComments = function () {
             var parameters = {
-                type: "POST",
-                url: "https://localhost:44347/api/Account/CreateUser",
+                type: "GET",
+                url: "https://localhost:44347/api/Comment/GetComment",
                 data: [
-                    { "emailAddress": "HelloWorld@bla.com" },
-                    { "password": "SuperSecurePassword1234!" }
+                    { "commentId": "1" },
                 ],
                 headers: null
             };
@@ -66,18 +79,18 @@ var HomeHOC = /** @class */ (function (_super) {
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "First"),
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
-                        react_1.default.createElement(Button_1.Button, { buttonText: "Find Users", onClick: this.createUser })))),
+                        react_1.default.createElement(Button_1.Button, { size: "godzilla", text: "Find Users", onClick: this.getComments })))),
             react_1.default.createElement("div", { className: "section" },
                 react_1.default.createElement("h2", { className: "section__title" }, "Recommended Mountains"),
                 react_1.default.createElement("div", { className: "mountains" },
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) })),
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) })),
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) })),
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
                     react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", 0, ["Trees", "Bowls"]) }))))));
+                        react_1.default.createElement(SkiResortImageCard_1.default, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) }))))));
     };
     return HomeHOC;
 }(react_1.default.Component));

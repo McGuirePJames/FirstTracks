@@ -62,6 +62,8 @@ namespace FirstTracks.Service.Services
 		{
 			this._services.AddScoped<IAccountService, AccountService>();
 			this._services.AddScoped<IAccountRepo, AccountRepo>();
+			this._services.AddScoped<ICommentRepo, CommentRepo>();
+			this._services.AddScoped<ICommentService, CommentService>();
 		}
 	}
 }

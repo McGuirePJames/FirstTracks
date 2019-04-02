@@ -25,13 +25,27 @@ export class HomeHOC extends React.Component<Props, State>{
         }
     }
 
-    private createUser = (): void => {
+    //private createUser = (): void => {
+    //    const parameters: RequestParameters = {
+    //        type: "POST",
+    //        url: "https://localhost:44347/api/Account/CreateUser",
+    //        data: [
+    //            { "emailAddress": "HelloWorld@bla.com" },
+    //            { "password": "SuperSecurePassword1234!" }
+    //        ],
+    //        headers: null
+    //    }
+    //    request(parameters).then((response: RequestResponse) => {
+    //        console.log(response.response);
+    //    })
+    //}
+
+    private getComments = (): void => {
         const parameters: RequestParameters = {
-            type: "POST",
-            url: "https://localhost:44347/api/Account/CreateUser",
+            type: "GET",
+            url: "https://localhost:44347/api/Comment/GetComment",
             data: [
-                { "emailAddress": "HelloWorld@bla.com" },
-                { "password": "SuperSecurePassword1234!" }
+                { "commentId": "1" },
             ],
             headers: null
         }
@@ -68,7 +82,7 @@ export class HomeHOC extends React.Component<Props, State>{
                             <p className="welcome__slogan">On The Slopes</p>
                         </div>
                         <div className="welcome__button-container">
-                            <Button size="godzilla" text="Find Users" onClick={this.createUser} />
+                            <Button size="godzilla" text="Find Users" onClick={this.getComments} />
                         </div>
                     </div>
                 </div>
