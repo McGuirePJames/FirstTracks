@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using FirstTracks.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstTracks.Api.Controllers
@@ -24,7 +20,7 @@ namespace FirstTracks.Api.Controllers
 		[HttpGet]
 		public async Task<IActionResult> GetMountainAsync(string mountainId)
 		{
-			return Ok(this._mountainService.GetMountainAsync(mountainId));
+			return Ok(await this._mountainService.GetMountainAsync(mountainId));
 		}
 	}
 }

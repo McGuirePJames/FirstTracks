@@ -7,6 +7,6 @@ export interface State {
 }
 export declare class HomeHOC extends React.Component<Props, State> {
     constructor(props: Props);
-    private getComments;
+    private getMountain;
     render(): ReactElement<HTMLDivElement>;
 }

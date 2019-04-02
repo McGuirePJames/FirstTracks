@@ -5,7 +5,7 @@ var __extends = (this && this.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -43,12 +43,25 @@ var HomeHOC = /** @class */ (function (_super) {
         //        console.log(response.response);
         //    })
         //}
-        _this.getComments = function () {
+        //private getComments = (): void => {
+        //    const parameters: RequestParameters = {
+        //        type: "GET",
+        //        url: "https://localhost:44347/api/Comment/GetComment",
+        //        data: [
+        //            { "commentId": "1" },
+        //        ],
+        //        headers: null
+        //    };
+        //    request(parameters).then((response: RequestResponse) => {
+        //        console.log(response.response);
+        //    });
+        //}
+        _this.getMountain = function () {
             var parameters = {
                 type: "GET",
-                url: "https://localhost:44347/api/Comment/GetComment",
+                url: "https://localhost:44347/api/Mountain/GetMountainAsync",
                 data: [
-                    { "commentId": "1" },
+                    { 'mountainId': '36CCE9CC-04DE-4692-9509-B5E82DDA2B79' },
                 ],
                 headers: null
             };
@@ -79,7 +92,7 @@ var HomeHOC = /** @class */ (function (_super) {
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "First"),
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
-                        react_1.default.createElement(Button_1.Button, { size: "godzilla", text: "Find Users", onClick: this.getComments })))),
+                        react_1.default.createElement(Button_1.Button, { size: "godzilla", text: "Find Users", onClick: this.getMountain })))),
             react_1.default.createElement("div", { className: "section" },
                 react_1.default.createElement("h2", { className: "section__title" }, "Recommended Mountains"),
                 react_1.default.createElement("div", { className: "mountains" },

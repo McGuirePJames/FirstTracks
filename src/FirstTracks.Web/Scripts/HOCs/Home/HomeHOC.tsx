@@ -40,12 +40,26 @@ export class HomeHOC extends React.Component<Props, State>{
     //    })
     //}
 
-    private getComments = (): void => {
+    //private getComments = (): void => {
+    //    const parameters: RequestParameters = {
+    //        type: "GET",
+    //        url: "https://localhost:44347/api/Comment/GetComment",
+    //        data: [
+    //            { "commentId": "1" },
+    //        ],
+    //        headers: null
+    //    };
+    //    request(parameters).then((response: RequestResponse) => {
+    //        console.log(response.response);
+    //    });
+    //}
+
+    private getMountain = (): void => {
         const parameters: RequestParameters = {
             type: "GET",
-            url: "https://localhost:44347/api/Comment/GetComment",
+            url: "https://localhost:44347/api/Mountain/GetMountainAsync",
             data: [
-                { "commentId": "1" },
+                { 'mountainId':'36CCE9CC-04DE-4692-9509-B5E82DDA2B79' },
             ],
             headers: null
         };
@@ -82,7 +96,7 @@ export class HomeHOC extends React.Component<Props, State>{
                             <p className="welcome__slogan">On The Slopes</p>
                         </div>
                         <div className="welcome__button-container">
-                            <Button size="godzilla" text="Find Users" onClick={this.getComments} />
+                            <Button size="godzilla" text="Find Users" onClick={this.getMountain} />
                         </div>
                     </div>
                 </div>

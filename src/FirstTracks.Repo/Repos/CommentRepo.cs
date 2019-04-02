@@ -11,9 +11,8 @@ namespace FirstTracks.Repo.Repos
 	public class CommentRepo : ICommentRepo
 	{
 		private readonly ConnectionStrings _connectionStrings;
-		public CommentRepo(
-			IOptions<ConnectionStrings> options
-		)
+
+		public CommentRepo(IOptions<ConnectionStrings> options)
 		{
 			this._connectionStrings = options.Value;
 		}
