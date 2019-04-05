@@ -33,6 +33,16 @@ namespace FirstTracks.Repo.Repos
 				return JsonConvert.DeserializeObject<Mountain>(result);
 			}
 		}
+
+		public async Task<List<Mountain>> GetMountainsAsync()
+		{
+			using (SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
+			{
+				var result = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getmountains", commandType: CommandType.StoredProcedure));
+
+				return JsonConvert.DeserializeObject<List<Mountain>>(result);
+			}
+		}
 	}
 }
 

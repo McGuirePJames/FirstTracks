@@ -25,47 +25,28 @@ export class HomeHOC extends React.Component<Props, State>{
         };
     }
 
-    //private createUser = (): void => {
-    //    const parameters: RequestParameters = {
-    //        type: "POST",
-    //        url: "https://localhost:44347/api/Account/CreateUser",
-    //        data: [
-    //            { "emailAddress": "HelloWorld@bla.com" },
-    //            { "password": "SuperSecurePassword1234!" }
-    //        ],
-    //        headers: null
-    //    }
-    //    request(parameters).then((response: RequestResponse) => {
-    //        console.log(response.response);
-    //    })
-    //}
-
-    //private getComments = (): void => {
+    //private getMountain = async () => {
     //    const parameters: RequestParameters = {
     //        type: "GET",
-    //        url: "https://localhost:44347/api/Comment/GetComment",
+    //        url: "https://localhost:44347/api/Mountain/GetMountainAsync",
     //        data: [
-    //            { "commentId": "1" },
+    //            { 'mountainId':'36CCE9CC-04DE-4692-9509-B5E82DDA2B79' },
     //        ],
     //        headers: null
     //    };
-    //    request(parameters).then((response: RequestResponse) => {
-    //        console.log(response.response);
-    //    });
+    //    const requestResponse: RequestResponse = await request(parameters);  
+    //    console.log(requestResponse.response);
     //}
 
-    private getMountain = (): void => {
+    private getMountain = async () => {
         const parameters: RequestParameters = {
             type: "GET",
-            url: "https://localhost:44347/api/Mountain/GetMountainAsync",
-            data: [
-                { 'mountainId':'36CCE9CC-04DE-4692-9509-B5E82DDA2B79' },
-            ],
+            url: "https://localhost:44347/api/Mountain/GetMountainsAsync",
+            data: null,
             headers: null
         };
-        request(parameters).then((response: RequestResponse) => {
-            console.log(response.response);
-        });
+        const requestResponse: RequestResponse = await request(parameters);
+        console.log(requestResponse.response);
     }
 
     public render(): ReactElement<HTMLDivElement> {

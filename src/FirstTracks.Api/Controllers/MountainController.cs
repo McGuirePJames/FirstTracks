@@ -22,5 +22,11 @@ namespace FirstTracks.Api.Controllers
 		{
 			return Ok(await this._mountainService.GetMountainAsync(mountainId));
 		}
+
+		[HttpGet]
+		public async Task<IActionResult> GetMountainsAsync()
+		{
+			return Ok(await this._mountainService.GetMountainsAsync());
+		}
 	}
 }
