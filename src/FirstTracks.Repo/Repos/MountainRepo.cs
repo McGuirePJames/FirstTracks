@@ -21,26 +21,26 @@ namespace FirstTracks.Repo.Repos
 			this._connectionStrings = options.Value;
 		}
 
-		public async Task<Mountain> GetMountainAsync(string mountainId)
+		public async Task<SkiResort> GetMountainAsync(string mountainId)
 		{
 			using (SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
 			{
-				var result = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getmountain", new
+				var result = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getskiresort", new
 				{
 					mountainId
 				}, commandType: CommandType.StoredProcedure).Result.FirstOrDefault());
 
-				return JsonConvert.DeserializeObject<Mountain>(result);
+				return JsonConvert.DeserializeObject<SkiResort>(result);
 			}
 		}
 
-		public async Task<List<Mountain>> GetMountainsAsync()
+		public async Task<List<SkiResort>> GetMountainsAsync()
 		{
 			using (SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
 			{
-				var result = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getmountains", commandType: CommandType.StoredProcedure));
+				var result = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getskiresorts", commandType: CommandType.StoredProcedure));
 
-				return JsonConvert.DeserializeObject<List<Mountain>>(result);
+				return JsonConvert.DeserializeObject<List<SkiResort>>(result);
 			}
 		}
 	}

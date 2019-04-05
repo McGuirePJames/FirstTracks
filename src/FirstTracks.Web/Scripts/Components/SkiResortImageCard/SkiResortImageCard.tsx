@@ -21,9 +21,10 @@ export class SkiResortImageCard extends React.Component<Props, State>{
     }
 
     public render() {
+        console.log(this.props.skiResort);
         return (
             <div className="image-card">
-                <img className="image-card__image" src={this.props.skiResort.imageFilePath} />
+                <img className="image-card__image" src={this.props.skiResort.imagePath} />
                 <div className="image-card__details">
                     <div className="image-card__top">
                         <p className="image-card__name">{this.props.skiResort.name}</p>
@@ -38,13 +39,16 @@ export class SkiResortImageCard extends React.Component<Props, State>{
                     <div className="image-card__middle">
                         <div className="image-card__tags">
                             {
-                                this.props.skiResort.tags.map((tag: string, i: number) => {
-                                    return (
-                                        <div className="image-card__tag" key={i}>
-                                            {tag}
-                                        </div>
-                                    );
-                                })
+                                this.props.skiResort.tags !== null && this.props.skiResort.tags !== undefined ? (
+                                    this.props.skiResort.tags.map((tag: string, i: number) => {
+                                        return (
+                                            <div className="image-card__tag" key={i}>
+                                                {tag}
+                                            </div>
+                                        );
+                                    })
+                                )
+                                    : null
                             }
                         </div>
 

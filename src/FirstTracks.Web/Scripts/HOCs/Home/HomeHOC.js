@@ -58,26 +58,13 @@ var Button_1 = require("../../Components/Button/Button");
 require("../Home/_homeHOC.scss");
 var NavigationBar_1 = require("../../Components/NavigationBar/NavigationBar");
 var NavigationLink_1 = require("../../Models/NavigationLink/NavigationLink");
-var SkiResortImageCard_1 = require("../../Components/SkiResortImageCard/SkiResortImageCard");
-var SkiResort_1 = require("../../Models/SkiResort/SkiResort");
+var SkiResortCarousel_1 = require("../../Components/SkiResortCarousel/SkiResortCarousel");
 var HomeHOC = /** @class */ (function (_super) {
     __extends(HomeHOC, _super);
     function HomeHOC(props) {
         var _this = _super.call(this, props) || this;
-        //private getMountain = async () => {
-        //    const parameters: RequestParameters = {
-        //        type: "GET",
-        //        url: "https://localhost:44347/api/Mountain/GetMountainAsync",
-        //        data: [
-        //            { 'mountainId':'36CCE9CC-04DE-4692-9509-B5E82DDA2B79' },
-        //        ],
-        //        headers: null
-        //    };
-        //    const requestResponse: RequestResponse = await request(parameters);  
-        //    console.log(requestResponse.response);
-        //}
-        _this.getMountain = function () { return __awaiter(_this, void 0, void 0, function () {
-            var parameters, requestResponse;
+        _this.getMountains = function () { return __awaiter(_this, void 0, void 0, function () {
+            var parameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -89,13 +76,29 @@ var HomeHOC = /** @class */ (function (_super) {
                         };
                         return [4 /*yield*/, request_1.request(parameters)];
                     case 1:
-                        requestResponse = _a.sent();
-                        console.log(requestResponse.response);
+                        response = _a.sent();
+                        return [2 /*return*/, JSON.parse(response.response)];
+                }
+            });
+        }); };
+        _this.componentDidMount = function () { return __awaiter(_this, void 0, void 0, function () {
+            var _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        _a = this.setState;
+                        _b = {};
+                        return [4 /*yield*/, this.getMountains()];
+                    case 1:
+                        _a.apply(this, [(_b.skiResorts = _c.sent(),
+                                _b)]);
                         return [2 /*return*/];
                 }
             });
         }); };
-        _this.state = {};
+        _this.state = {
+            skiResorts: []
+        };
         return _this;
     }
     HomeHOC.prototype.render = function () {
@@ -118,18 +121,10 @@ var HomeHOC = /** @class */ (function (_super) {
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "First"),
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
-                        react_1.default.createElement(Button_1.Button, { size: "godzilla", text: "Find Users", onClick: this.getMountain })))),
+                        react_1.default.createElement(Button_1.Button, { size: "godzilla", text: "Find Users", onClick: function () { } })))),
             react_1.default.createElement("div", { className: "section" },
                 react_1.default.createElement("h2", { className: "section__title" }, "Recommended Mountains"),
-                react_1.default.createElement("div", { className: "mountains" },
-                    react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
-                    react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
-                    react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) })),
-                    react_1.default.createElement("div", { className: "mountain" },
-                        react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: new SkiResort_1.SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"]) }))))));
+                react_1.default.createElement(SkiResortCarousel_1.SkiResortCarousel, { skiResorts: this.state.skiResorts }))));
     };
     return HomeHOC;
 }(react_1.default.Component));

@@ -27,8 +27,9 @@ var SkiResortImageCard = /** @class */ (function (_super) {
         return _this;
     }
     SkiResortImageCard.prototype.render = function () {
+        console.log(this.props.skiResort);
         return (react_1.default.createElement("div", { className: "image-card" },
-            react_1.default.createElement("img", { className: "image-card__image", src: this.props.skiResort.imageFilePath }),
+            react_1.default.createElement("img", { className: "image-card__image", src: this.props.skiResort.imagePath }),
             react_1.default.createElement("div", { className: "image-card__details" },
                 react_1.default.createElement("div", { className: "image-card__top" },
                     react_1.default.createElement("p", { className: "image-card__name" }, this.props.skiResort.name),
@@ -39,9 +40,10 @@ var SkiResortImageCard = /** @class */ (function (_super) {
                         react_1.default.createElement(RatingIcon_1.RatingIcon, { filledState: 50 }),
                         react_1.default.createElement(RatingIcon_1.RatingIcon, { filledState: 0 }))),
                 react_1.default.createElement("div", { className: "image-card__middle" },
-                    react_1.default.createElement("div", { className: "image-card__tags" }, this.props.skiResort.tags.map(function (tag, i) {
+                    react_1.default.createElement("div", { className: "image-card__tags" }, this.props.skiResort.tags !== null && this.props.skiResort.tags !== undefined ? (this.props.skiResort.tags.map(function (tag, i) {
                         return (react_1.default.createElement("div", { className: "image-card__tag", key: i }, tag));
-                    }))),
+                    }))
+                        : null)),
                 react_1.default.createElement("div", { className: "image-card__bottom" },
                     react_1.default.createElement("a", { className: "image-card__learn-more", href: this.props.skiResort.mountainHref }, "Learn More")))));
     };

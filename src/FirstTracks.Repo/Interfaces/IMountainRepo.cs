@@ -6,7 +6,7 @@ namespace FirstTracks.Repo.Interfaces
 {
 	public interface IMountainRepo
 	{
-		Task<Mountain> GetMountainAsync(string mountainId);
-		Task<List<Mountain>> GetMountainsAsync();
+		Task<SkiResort> GetMountainAsync(string mountainId);
+		Task<List<SkiResort>> GetMountainsAsync();
 	}
 }

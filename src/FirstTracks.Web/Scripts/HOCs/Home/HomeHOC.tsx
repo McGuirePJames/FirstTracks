@@ -5,15 +5,15 @@ import { Button } from "../../Components/Button/Button";
 import '../Home/_homeHOC.scss';
 import { NavigationBar } from "../../Components/NavigationBar/NavigationBar";
 import { NavigationLink } from "../../Models/NavigationLink/NavigationLink";
-import { SkiResortImageCard } from "../../Components/SkiResortImageCard/SkiResortImageCard";
 import { SkiResort } from "../../Models/SkiResort/SkiResort";
+import { SkiResortCarousel } from "../../Components/SkiResortCarousel/SkiResortCarousel";
 
 export interface Props {
 
 }
 
 export interface State {
-
+    skiResorts: SkiResort[];
 }
 
 export class HomeHOC extends React.Component<Props, State>{
@@ -21,32 +21,26 @@ export class HomeHOC extends React.Component<Props, State>{
         super(props);
 
         this.state = {
-
+            skiResorts: []
         };
     }
 
-    //private getMountain = async () => {
-    //    const parameters: RequestParameters = {
-    //        type: "GET",
-    //        url: "https://localhost:44347/api/Mountain/GetMountainAsync",
-    //        data: [
-    //            { 'mountainId':'36CCE9CC-04DE-4692-9509-B5E82DDA2B79' },
-    //        ],
-    //        headers: null
-    //    };
-    //    const requestResponse: RequestResponse = await request(parameters);  
-    //    console.log(requestResponse.response);
-    //}
-
-    private getMountain = async () => {
+    private getMountains = async (): Promise<SkiResort[]> => {
         const parameters: RequestParameters = {
             type: "GET",
             url: "https://localhost:44347/api/Mountain/GetMountainsAsync",
             data: null,
             headers: null
         };
-        const requestResponse: RequestResponse = await request(parameters);
-        console.log(requestResponse.response);
+        const response: RequestResponse = await request(parameters);
+        return JSON.parse(response.response) as SkiResort[];
+
+    }
+
+    public componentDidMount = async () => {
+        this.setState({
+            skiResorts: await this.getMountains()
+        });
     }
 
     public render(): ReactElement<HTMLDivElement> {
@@ -77,34 +71,14 @@ export class HomeHOC extends React.Component<Props, State>{
                             <p className="welcome__slogan">On The Slopes</p>
                         </div>
                         <div className="welcome__button-container">
-                            <Button size="godzilla" text="Find Users" onClick={this.getMountain} />
+                            <Button size="godzilla" text="Find Users" onClick={() => { }} />
                         </div>
                     </div>
                 </div>
                 <div className="section">
                     <h2 className="section__title">Recommended Mountains</h2>
-                    <div className="mountains">
-                        <div className="mountain">
-                            <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
-                            />
-                        </div>
-                        <div className="mountain">
-                            <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
-                            />
-                        </div>
-                        <div className="mountain">
-                            <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
-                            />
-                        </div>
-                        <div className="mountain">
-                            <SkiResortImageCard
-                                skiResort={new SkiResort("Park City", "Park City", "UT", "/images/Steamboat.jpg", "#", 0, ["Trees", "Bowls"])}
-                            />
-                        </div>
-                    </div>
+                    <SkiResortCarousel skiResorts={this.state.skiResorts}>
+                    </SkiResortCarousel>
                 </div>
             </div>
         );

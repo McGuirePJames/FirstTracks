@@ -90,16 +90,5 @@
             font-weight: 300;
             color: $DarkGray;
         }
-
-        .mountains {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            .mountain {
-                margin-top: 50px;
-                margin-left: 30px;
-            }
-        }
     }
 }

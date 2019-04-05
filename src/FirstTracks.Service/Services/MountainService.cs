@@ -17,12 +17,12 @@ namespace FirstTracks.Service.Services
 			this._mountainRepo = mountainRepo;
 		}
 		
-		public async Task<Mountain> GetMountainAsync(string mountainId)
+		public async Task<SkiResort> GetMountainAsync(string mountainId)
 		{
 			return await this._mountainRepo.GetMountainAsync(mountainId);
 		}
 
-		public async Task<List<Mountain>> GetMountainsAsync()
+		public async Task<List<SkiResort>> GetMountainsAsync()
 		{
 			return await this._mountainRepo.GetMountainsAsync();
 		}

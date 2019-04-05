@@ -2,13 +2,14 @@
 
 namespace FirstTracks.Core.Models
 {
-	public class Mountain : BaseModel
+	public class SkiResort : BaseModel
 	{
 		public string MountainId { get; set; }
 		public string Name { get; set; }
+		public string ImagePath { get; set; }
 		public List<Trail> Trails { get; set; }
 
-		public Mountain()
+		public SkiResort()
 		{
 			this.Trails = new List<Trail>();
 		}
