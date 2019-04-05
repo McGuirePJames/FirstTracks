@@ -7,5 +7,10 @@ namespace FirstTracks.Core.Models
 		public string MountainId { get; set; }
 		public string Name { get; set; }
 		public List<Trail> Trails { get; set; }
+
+		public Mountain()
+		{
+			this.Trails = new List<Trail>();
+		}
 	}
 }

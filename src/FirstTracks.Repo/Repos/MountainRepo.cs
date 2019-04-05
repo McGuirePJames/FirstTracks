@@ -6,6 +6,9 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Linq;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace FirstTracks.Repo.Repos
 {
@@ -22,13 +25,14 @@ namespace FirstTracks.Repo.Repos
 		{
 			using (SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
 			{
-					var result = await conn.QueryAsync<Mountain>("usp_getmountain", new
-					{
-						MountainId = mountainId
-					}, commandType: CommandType.StoredProcedure);
-				
-				return null;
-			};
+				var result = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getmountain", new
+				{
+					mountainId
+				}, commandType: CommandType.StoredProcedure).Result.FirstOrDefault());
+
+				return JsonConvert.DeserializeObject<Mountain>(result);
+			}
 		}
 	}
 }
+
