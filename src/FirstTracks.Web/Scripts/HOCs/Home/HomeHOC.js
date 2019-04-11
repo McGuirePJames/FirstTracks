@@ -121,7 +121,7 @@ var HomeHOC = /** @class */ (function (_super) {
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "First"),
                         react_1.default.createElement("p", { className: "welcome__slogan" }, "On The Slopes")),
                     react_1.default.createElement("div", { className: "welcome__button-container" },
-                        react_1.default.createElement(Button_1.Button, { size: "godzilla", text: "Find Users", onClick: function () { } })))),
+                        react_1.default.createElement(Button_1.Button, { size: "godzilla", text: "Find Users", onClickCustom: function () { } })))),
             react_1.default.createElement("div", { className: "section" },
                 react_1.default.createElement("h2", { className: "section__title" }, "Recommended Mountains"),
                 react_1.default.createElement(SkiResortCarousel_1.SkiResortCarousel, { skiResorts: this.state.skiResorts }))));

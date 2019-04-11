@@ -23,12 +23,14 @@ var SkiResortImageCard = /** @class */ (function (_super) {
     __extends(SkiResortImageCard, _super);
     function SkiResortImageCard(props) {
         var _this = _super.call(this, props) || this;
+        _this.handleImageCardClick = function () {
+            window.location.href = "/Mountain?skiResortId=" + _this.props.skiResort.skiResortId;
+        };
         _this.state = {};
         return _this;
     }
     SkiResortImageCard.prototype.render = function () {
-        console.log(this.props.skiResort);
-        return (react_1.default.createElement("div", { className: "image-card" },
+        return (react_1.default.createElement("div", { className: "image-card", onClick: this.handleImageCardClick },
             react_1.default.createElement("img", { className: "image-card__image", src: this.props.skiResort.imagePath }),
             react_1.default.createElement("div", { className: "image-card__details" },
                 react_1.default.createElement("div", { className: "image-card__top" },

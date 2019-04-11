@@ -12,29 +12,29 @@ using System.Collections.Generic;
 
 namespace FirstTracks.Repo.Repos
 {
-	public class MountainRepo : IMountainRepo
+	public class SkiResortRepo : ISkiResortRepo
 	{
 		private readonly ConnectionStrings _connectionStrings;
-		public MountainRepo(
+		public SkiResortRepo(
 			IOptions<ConnectionStrings> options)
 		{
 			this._connectionStrings = options.Value;
 		}
 
-		public async Task<SkiResort> GetMountainAsync(string mountainId)
+		public async Task<SkiResort> GetSkiResortAsync(string skiResortId)
 		{
 			using (SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
 			{
-				var result = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getskiresort", new
+				var result =  JsonConvert.SerializeObject(await conn.QueryFirstAsync("usp_getskiresort", new
 				{
-					mountainId
-				}, commandType: CommandType.StoredProcedure).Result.FirstOrDefault());
+					skiResortId
+				}, commandType: CommandType.StoredProcedure));
 
 				return JsonConvert.DeserializeObject<SkiResort>(result);
 			}
 		}
 
-		public async Task<List<SkiResort>> GetMountainsAsync()
+		public async Task<List<SkiResort>> GetSkiResortsAsync()
 		{
 			using (SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
 			{

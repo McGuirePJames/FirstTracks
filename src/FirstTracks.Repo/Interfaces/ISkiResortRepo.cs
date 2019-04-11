@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace FirstTracks.Repo.Interfaces
 {
-	public interface IMountainRepo
+	public interface ISkiResortRepo
 	{
-		Task<SkiResort> GetMountainAsync(string mountainId);
-		Task<List<SkiResort>> GetMountainsAsync();
+		Task<SkiResort> GetSkiResortAsync(string skiResortId);
+		Task<List<SkiResort>> GetSkiResortsAsync();
 	}
 }

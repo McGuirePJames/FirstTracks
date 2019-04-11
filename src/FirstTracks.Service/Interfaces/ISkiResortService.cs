@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace FirstTracks.Service.Interfaces
 {
-	public interface IMountainService
+	public interface ISkiResortService
 	{
-		Task<SkiResort> GetMountainAsync(string mountainId);
-		Task<List<SkiResort>> GetMountainsAsync();
+		Task<SkiResort> GetSkiResortAsync(string skiResortId);
+		Task<List<SkiResort>> GetSkiResortsAsync();
 	}
 }

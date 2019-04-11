@@ -8,5 +8,6 @@ export interface State {
 }
 export declare class SkiResortImageCard extends React.Component<Props, State> {
     constructor(props: Props);
+    private handleImageCardClick;
     render(): JSX.Element;
 }

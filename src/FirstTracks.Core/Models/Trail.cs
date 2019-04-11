@@ -1,8 +1,12 @@
-﻿namespace FirstTracks.Core.Models
+﻿using FirstTracks.Core.Enums;
+
+namespace FirstTracks.Core.Models
 {
 	public class Trail : BaseModel
 	{
 		public string TrailId { get; set; }
+
+		public Difficulty Difficulty { get; set; }
 		public string Name { get; set; }	
 	}
 }

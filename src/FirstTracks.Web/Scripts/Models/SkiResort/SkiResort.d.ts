@@ -1,4 +1,5 @@
 export declare class SkiResort {
+    skiResortId: string;
     name: string;
     city: string;
     state: string;
@@ -6,5 +7,5 @@ export declare class SkiResort {
     mountainHref: string;
     rating: number;
     tags: string[];
-    constructor(name: string, city: string, state: string, imagePath: string, mountainHref: string, rating: number, tags: string[]);
+    constructor(skiResortId: string, name: string, city: string, state: string, imagePath: string, mountainHref: string, rating: number, tags: string[]);
 }

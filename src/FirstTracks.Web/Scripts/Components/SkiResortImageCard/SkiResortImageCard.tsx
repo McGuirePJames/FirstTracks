@@ -20,10 +20,13 @@ export class SkiResortImageCard extends React.Component<Props, State>{
         };
     }
 
+    private handleImageCardClick = (): void => {
+        window.location.href = `/Mountain?skiResortId=${this.props.skiResort.skiResortId}`;
+    }
+
     public render() {
-        console.log(this.props.skiResort);
         return (
-            <div className="image-card">
+            <div className="image-card" onClick={this.handleImageCardClick}>
                 <img className="image-card__image" src={this.props.skiResort.imagePath} />
                 <div className="image-card__details">
                     <div className="image-card__top">

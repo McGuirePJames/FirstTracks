@@ -25,22 +25,23 @@ export class HomeHOC extends React.Component<Props, State>{
         };
     }
 
-    private getMountains = async (): Promise<SkiResort[]> => {
+    private setSkiResorts = (): void => {
         const parameters: RequestParameters = {
             type: "GET",
-            url: "https://localhost:44347/api/Mountain/GetMountainsAsync",
+            url: "https://localhost:44347/api/SkiResort/GetSkiResortsAsync",
             data: null,
             headers: null
         };
-        const response: RequestResponse = await request(parameters);
-        return JSON.parse(response.response) as SkiResort[];
 
+        request(parameters).then((response: RequestResponse) => {
+            this.setState({
+                skiResorts: (JSON.parse(response.response)) as SkiResort[]
+            });
+        });
     }
 
-    public componentDidMount = async () => {
-        this.setState({
-            skiResorts: await this.getMountains()
-        });
+    public componentDidMount = () => {
+        this.setSkiResorts();
     }
 
     public render(): ReactElement<HTMLDivElement> {
@@ -71,12 +72,12 @@ export class HomeHOC extends React.Component<Props, State>{
                             <p className="welcome__slogan">On The Slopes</p>
                         </div>
                         <div className="welcome__button-container">
-                            <Button size="godzilla" text="Find Users" onClick={() => { }} />
+                            <Button size="godzilla" text="Find Users" onClickCustom={() => { }} />
                         </div>
                     </div>
                 </div>
                 <div className="section">
-                    <h2 className="section__title">Recommended Mountains</h2>
+                    <h2 className="section__title">Recommended Ski Resorts</h2>
                     <SkiResortCarousel skiResorts={this.state.skiResorts}>
                     </SkiResortCarousel>
                 </div>

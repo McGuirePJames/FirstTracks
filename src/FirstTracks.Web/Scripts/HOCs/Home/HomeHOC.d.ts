@@ -9,7 +9,7 @@ export interface State {
 }
 export declare class HomeHOC extends React.Component<Props, State> {
     constructor(props: Props);
-    private getMountains;
-    componentDidMount: () => Promise<void>;
+    private setSkiResorts;
+    componentDidMount: () => void;
     render(): ReactElement<HTMLDivElement>;
 }

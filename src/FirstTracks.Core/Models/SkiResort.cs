@@ -4,7 +4,7 @@ namespace FirstTracks.Core.Models
 {
 	public class SkiResort : BaseModel
 	{
-		public string MountainId { get; set; }
+		public string SkiResortId { get; set; }
 		public string Name { get; set; }
 		public string ImagePath { get; set; }
 		public List<Trail> Trails { get; set; }

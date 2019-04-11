@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var SkiResort = /** @class */ (function () {
-    function SkiResort(name, city, state, imagePath, mountainHref, rating, tags) {
+    function SkiResort(skiResortId, name, city, state, imagePath, mountainHref, rating, tags) {
+        this.skiResortId = skiResortId;
         this.name = name;
         this.city = city;
         this.state = state;

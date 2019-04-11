@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\Common\getQueryStringParameter.tsx" />
     <None Remove="Scripts\Common\request.ts" />
     <None Remove="Scripts\Components\SkiResortCarousel\SkiResortCarousel.tsx" />
     <None Remove="Scripts\Components\Link\Link.tsx" />
@@ -36,6 +37,7 @@
 
 
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Common\getQueryStringParameter.tsx" />
     <TypeScriptCompile Include="Scripts\Common\request.ts" />
     <TypeScriptCompile Include="Scripts\Components\SkiResortCarousel\SkiResortCarousel.tsx" />
     <TypeScriptCompile Include="Scripts\Components\RatingIcon\RatingIcon.tsx" />

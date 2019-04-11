@@ -1,4 +1,5 @@
 ﻿export class SkiResort {
+    skiResortId: string;
     name: string;
     city: string;
     state: string;
@@ -7,7 +8,8 @@
     rating: number;
     tags: string[];
 
-    constructor(name: string, city: string, state: string, imagePath: string, mountainHref:string, rating: number, tags: string[]) {
+    constructor(skiResortId: string, name: string, city: string, state: string, imagePath: string, mountainHref:string, rating: number, tags: string[]) {
+        this.skiResortId = skiResortId;
         this.name = name;
         this.city = city;
         this.state = state;

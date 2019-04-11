@@ -21,13 +21,11 @@ export class SkiResortCarousel extends React.Component<Props, State>{
     }
 
     public render(): ReactElement<HTMLDivElement> {
-        console.log('from carousel');
-        console.log(this.props.skiResorts);
         return (
             <div className="ski-resort-carousel">
                 <div className="mountains">
                     {
-                        this.props.skiResorts != null && this.props.skiResorts != undefined ? (
+                        this.props.skiResorts !== null && this.props.skiResorts !== undefined ? (
                             this.props.skiResorts.map((skiResort: SkiResort, i: number) => {
                                 return (
                                     <div key={i} className="mountain">

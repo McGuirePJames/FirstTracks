@@ -3,7 +3,7 @@ import '../Button/_button.scss';
 
 export interface Props {
     text: string;
-    onClick: Function;
+    onClickCustom: Function;
     size: "small" | "medium" | "large" | "godzilla";
 }
 
@@ -11,7 +11,7 @@ export interface State {
 
 }
 
-export class Button extends React.Component<Props, State>{
+export class Button extends React.Component<Props & React.HTMLAttributes<HTMLButtonElement>, State>{
     constructor(props: Props) {
         super(props);
 
@@ -22,7 +22,7 @@ export class Button extends React.Component<Props, State>{
 
     public render(): ReactElement<HTMLDivElement> {
         return (
-            <button type="button" className={"button " + this.props.size} onClick={() => { this.props.onClick(); }}>{this.props.text}</button>
+            <button type="button" className={"button " + this.props.size} onClick={() => { this.props.onClickCustom(); }}>{this.props.text}</button>
         );
     }
 }

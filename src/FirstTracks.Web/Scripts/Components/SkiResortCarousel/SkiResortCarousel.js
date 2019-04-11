@@ -27,10 +27,8 @@ var SkiResortCarousel = /** @class */ (function (_super) {
         return _this;
     }
     SkiResortCarousel.prototype.render = function () {
-        console.log('from carousel');
-        console.log(this.props.skiResorts);
         return (react_1.default.createElement("div", { className: "ski-resort-carousel" },
-            react_1.default.createElement("div", { className: "mountains" }, this.props.skiResorts != null && this.props.skiResorts != undefined ? (this.props.skiResorts.map(function (skiResort, i) {
+            react_1.default.createElement("div", { className: "mountains" }, this.props.skiResorts !== null && this.props.skiResorts !== undefined ? (this.props.skiResorts.map(function (skiResort, i) {
                 return (react_1.default.createElement("div", { key: i, className: "mountain" },
                     react_1.default.createElement(SkiResortImageCard_1.SkiResortImageCard, { skiResort: skiResort, key: i })));
             }))
