@@ -21,7 +21,7 @@ require("../../../Stylesheets/global.scss");
 require("../Mountain/_mountainHOC.scss");
 var request_1 = require("../../Common/request");
 var getQueryStringParameter_1 = require("../../Common/getQueryStringParameter");
-var react_chartjs_2_1 = require("react-chartjs-2");
+var TrailDifficultyPieChart_1 = __importDefault(require("../../Components/TrailDifficultyPieChart/TrailDifficultyPieChart"));
 var MountainHOC = /** @class */ (function (_super) {
     __extends(MountainHOC, _super);
     function MountainHOC(props) {
@@ -84,19 +84,7 @@ var MountainHOC = /** @class */ (function (_super) {
     };
     MountainHOC.prototype.render = function () {
         return (react_1.default.createElement("div", { className: "mountain-hoc" }, this.state.skiResort !== null ?
-            (react_1.default.createElement(react_chartjs_2_1.Pie, { data: this.getPieChartData(), options: {
-                    title: {
-                        text: "Trail Difficulty",
-                        fontSize: 20,
-                        display: true
-                    },
-                    responsive: true,
-                    maintainAspectRatio: false
-                }, legend: {
-                    labels: {
-                        fontSize: 10
-                    }
-                } }))
+            (react_1.default.createElement(TrailDifficultyPieChart_1.default, { skiResort: this.state.skiResort }))
             :
                 null));
     };

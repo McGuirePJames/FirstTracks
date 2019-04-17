@@ -1,5 +1,6 @@
 /*Font Families*/
 /*Colors*/
+/*Box Shadow*/
 html, body {
   height: 100%;
   width: 100%; }
@@ -36,6 +37,7 @@ html body {
 
 /*Font Families*/
 /*Colors*/
+/*Box Shadow*/
 html, body {
   height: 100%;
   width: 100%; }
@@ -113,6 +115,7 @@ html body {
 
 /*Font Families*/
 /*Colors*/
+/*Box Shadow*/
 .navigation-bar {
   display: flex; }
   .navigation-bar > *:not(:last-child) {
@@ -120,6 +123,7 @@ html body {
 
 /*Font Families*/
 /*Colors*/
+/*Box Shadow*/
 .link a {
   font-size: 2rem;
   font-weight: 300;
@@ -152,6 +156,7 @@ html body {
 
 /*Font Families*/
 /*Colors*/
+/*Box Shadow*/
 .image-card {
   height: 500px;
   width: 400px;

@@ -4,8 +4,8 @@ import '../Mountain/_mountainHOC.scss';
 import { RequestParameters, RequestResponse, request } from "../../Common/request";
 import { getQueryStringParameter } from '../../Common/getQueryStringParameter';
 import { SkiResort } from "../../Models/SkiResort/SkiResort";
-import { Pie } from 'react-chartjs-2';
 import { ChartData } from "chart.js";
+import TrailDifficultyPieChart from "../../Components/TrailDifficultyPieChart/TrailDifficultyPieChart";
 
 
 export interface Props {
@@ -88,22 +88,8 @@ export class MountainHOC extends React.Component<Props, State>{
                 {
                     this.state.skiResort !== null ?
                         (
-                            <Pie
-                                data={this.getPieChartData()}
-                                options={{
-                                    title: {
-                                        text: "Trail Difficulty",
-                                        fontSize: 20,
-                                        display: true
-                                    },
-                                    responsive: true,
-                                    maintainAspectRatio: false
-                                }}
-                                legend={{
-                                    labels: {
-                                        fontSize: 10
-                                    }
-                                }}
+                            <TrailDifficultyPieChart
+                                skiResort={this.state.skiResort}
                             />
                         )
                         :
