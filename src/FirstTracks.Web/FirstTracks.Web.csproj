@@ -19,6 +19,7 @@
     <None Remove="Scripts\HOCs\Mountain\MountainHOC.tsx" />
     <None Remove="Scripts\Models\NavigationLink.ts" />
     <None Remove="Scripts\Models\SkiResort\SkiResort.ts" />
+    <None Remove="Scripts\Models\Trail\Trail.ts" />
   </ItemGroup>
 
 
@@ -48,6 +49,7 @@
     <TypeScriptCompile Include="Scripts\HOCs\Mountain\MountainHOC.tsx" />
     <TypeScriptCompile Include="Scripts\Models\NavigationLink\NavigationLink.ts" />
     <TypeScriptCompile Include="Scripts\Models\SkiResort\SkiResort.ts" />
+    <TypeScriptCompile Include="Scripts\Models\Trail\Trail.ts" />
   </ItemGroup>
 
 </Project>

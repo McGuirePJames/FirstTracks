@@ -1,9 +1,12 @@
 ﻿import React, { ReactElement } from "react";
 import '../../../Stylesheets/global.scss';
-import '../Mountain/_mountain.scss';
+import '../Mountain/_mountainHOC.scss';
 import { RequestParameters, RequestResponse, request } from "../../Common/request";
 import { getQueryStringParameter } from '../../Common/getQueryStringParameter';
 import { SkiResort } from "../../Models/SkiResort/SkiResort";
+import { Pie } from 'react-chartjs-2';
+import { ChartData } from "chart.js";
+
 
 export interface Props {
     //skiResort: SkiResort;
@@ -20,6 +23,43 @@ export class MountainHOC extends React.Component<Props, State>{
         this.state = {
             skiResort: null
         };
+    }
+
+    public getPieChartData = () => {
+        console.log(this.state.skiResort!.trails.filter(x => x['difficulty'] === 'Beginner').length);
+        const chartData: ChartData = {
+            labels: [
+                'Beginner',
+                'Intermediate',
+                'Advanced',
+                'Expert'
+            ],
+            datasets: [
+                {
+                    data: [
+                        this.state.skiResort!.trails.filter(x => x['difficulty'] === 'Beginner').length,
+                        this.state.skiResort!.trails.filter(x => x['difficulty'] === 'Intermediate').length,
+                        this.state.skiResort!.trails.filter(x => x['difficulty'] === 'Advanced').length,
+                        this.state.skiResort!.trails.filter(x => x['difficulty'] === 'Expert').length
+                    ],
+                    backgroundColor: [
+                        '#39B54A',
+                        '#0F75BC',
+                        '#B50000',
+                        '#000000'
+                    ],
+                    hoverBackgroundColor: [
+                        '#39B54A',
+                        '#0F75BC',
+                        '#B50000',
+                        '#000000'
+                    ]
+                }
+            ]
+
+        }
+
+        return chartData;
     }
 
     public setSkiResort = (): void => {
@@ -48,9 +88,27 @@ export class MountainHOC extends React.Component<Props, State>{
                 {
                     this.state.skiResort !== null ?
                         (
-                            <p>{this.state.skiResort.name}</p>
+                            <Pie
+                                data={this.getPieChartData()}
+                                options={{
+                                    title: {
+                                        text: "Trail Difficulty",
+                                        fontSize: 20,
+                                        display: true
+                                    },
+                                    responsive: true,
+                                    maintainAspectRatio: false
+                                }}
+                                legend={{
+                                    labels: {
+                                        fontSize: 10
+                                    }
+                                }}
+                            />
                         )
-                        : null
+                        :
+                        null
+
                 }
 
             </div>

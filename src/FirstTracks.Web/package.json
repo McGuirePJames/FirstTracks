@@ -19,6 +19,9 @@
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
+    "@types/chart.js": "^2.7.51",
+    "@types/chartjs": "0.0.31",
+    "@types/react-chartjs-2": "^2.5.7",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
@@ -43,6 +46,7 @@
     "@types/react-dom": "^16.8.3",
     "@webpack-cli/init": "^0.1.5",
     "autoprefixer": "^9.5.0",
+    "chart.js": "^2.8.0",
     "npm": "^6.9.0",
     "react": "^16.8.4",
     "react-chartjs-2": "^2.7.6",

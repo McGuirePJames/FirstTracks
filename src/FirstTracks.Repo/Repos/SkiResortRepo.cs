@@ -25,12 +25,20 @@ namespace FirstTracks.Repo.Repos
 		{
 			using (SqlConnection conn = new SqlConnection(this._connectionStrings.FirstTracksDB))
 			{
-				var result =  JsonConvert.SerializeObject(await conn.QueryFirstAsync("usp_getskiresort", new
+				var skiResortJson = JsonConvert.SerializeObject(await conn.QuerySingleOrDefaultAsync("usp_getskiresort", new
 				{
 					skiResortId
 				}, commandType: CommandType.StoredProcedure));
 
-				return JsonConvert.DeserializeObject<SkiResort>(result);
+				var trailsJson = JsonConvert.SerializeObject(await conn.QueryAsync("usp_getskiresorttrails", new
+				{
+					skiResortId
+				}, commandType: CommandType.StoredProcedure));
+
+				SkiResort skiResort = JsonConvert.DeserializeObject<SkiResort>(skiResortJson);
+				skiResort.Trails = JsonConvert.DeserializeObject<List<Trail>>(trailsJson);
+
+				return skiResort;
 			}
 		}
 

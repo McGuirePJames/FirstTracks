@@ -6,7 +6,7 @@ namespace FirstTracks.Core.Models
 	{
 		public string TrailId { get; set; }
 
-		public Difficulty Difficulty { get; set; }
+		public string Difficulty { get; set; }
 		public string Name { get; set; }	
 	}
 }
