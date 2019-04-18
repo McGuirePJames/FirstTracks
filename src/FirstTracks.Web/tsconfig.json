@@ -23,6 +23,6 @@
     "target": "es5"
   },
   "include": [
-    "Scripts\\**\\*.tsx"
+    "Scripts\\**\\*.tsx", "../FirstTracks.Service/Interfaces/ISkiResortSnowfallService.cs", "../FirstTracks.Service/Interfaces/ISkiResortSnowfall.cs", "../FirstTracks.Service/Services/SkiResortSnowfallService.cs"
   ]
 }

@@ -1,4 +1,5 @@
 ﻿using FirstTracks.Core.Enums;
+using System.Linq;
 
 namespace FirstTracks.Core.Models
 {

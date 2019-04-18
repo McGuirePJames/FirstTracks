@@ -19,21 +19,26 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 require("./_gridContainer.scss");
-var GridContainer = /** @class */ (function (_super) {
-    __extends(GridContainer, _super);
-    function GridContainer(props) {
+var GridContainer_1 = __importDefault(require("../GridContainer/GridContainer"));
+var SnowfallByMonthChart = /** @class */ (function (_super) {
+    __extends(SnowfallByMonthChart, _super);
+    function SnowfallByMonthChart(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {};
         return _this;
     }
-    GridContainer.prototype.render = function () {
-        return (react_1.default.createElement("div", { className: "grid-container" }, this.props.children));
+    SnowfallByMonthChart.prototype.render = function () {
+        return (react_1.default.createElement("div", { className: "snowfall-by-month-chart" },
+            react_1.default.createElement(GridContainer_1.default, null)));
     };
-    return GridContainer;
+    return SnowfallByMonthChart;
 }(react_1.Component));
-exports.GridContainer = GridContainer;
-exports.default = GridContainer;
-//# sourceMappingURL=GridContainer.js.map
+exports.SnowfallByMonthChart = SnowfallByMonthChart;
+exports.default = SnowfallByMonthChart;
+//# sourceMappingURL=SnowFallByMonthChart.js.map

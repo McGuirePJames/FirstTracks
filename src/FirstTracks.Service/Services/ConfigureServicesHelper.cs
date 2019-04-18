@@ -66,6 +66,8 @@ namespace FirstTracks.Service.Services
 			this._services.AddScoped<ICommentRepo, CommentRepo>();
 			this._services.AddScoped<ISkiResortService, SkiResortService>();
 			this._services.AddScoped<ISkiResortRepo, SkiResortRepo>();
+			this._services.AddScoped<ISkiResortSnowfallService, SkiResortSnowfallService>();
+			this._services.AddScoped<ISkiResortSnowfallRepo, SkiResortSnowfallRepo>();
 		}
 	}
 }

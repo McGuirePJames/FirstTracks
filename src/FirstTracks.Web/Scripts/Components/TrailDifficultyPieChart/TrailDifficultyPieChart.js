@@ -65,19 +65,28 @@ var TrailDifficultyPieChart = /** @class */ (function (_super) {
     TrailDifficultyPieChart.prototype.render = function () {
         return (react_1.default.createElement("div", { className: "trail-difficulty-pie-chart" },
             react_1.default.createElement(GridContainer_1.default, null,
-                react_1.default.createElement(react_chartjs_2_1.Pie, { data: this.getPieChartData(), options: {
-                        title: {
-                            text: "Trail Difficulty",
-                            fontSize: 20,
-                            display: true
-                        },
-                        responsive: true,
-                        maintainAspectRatio: false
-                    }, legend: {
-                        labels: {
-                            fontSize: 10
-                        }
-                    } }))));
+                react_1.default.createElement("div", { className: "chart-container" },
+                    react_1.default.createElement(react_chartjs_2_1.Pie, { data: this.getPieChartData(), options: {
+                            title: {
+                                text: "Trail Difficulty",
+                                fontSize: 20,
+                                display: true
+                            },
+                            layout: {
+                                padding: {
+                                    left: 30,
+                                    top: 30,
+                                    right: 30,
+                                    bottom: 30
+                                }
+                            },
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }, legend: {
+                            labels: {
+                                fontSize: 10
+                            }
+                        } })))));
     };
     return TrailDifficultyPieChart;
 }(react_1.default.Component));
