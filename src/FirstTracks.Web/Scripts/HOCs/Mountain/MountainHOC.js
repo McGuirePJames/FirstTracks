@@ -22,6 +22,7 @@ require("../Mountain/_mountainHOC.scss");
 var request_1 = require("../../Common/request");
 var getQueryStringParameter_1 = require("../../Common/getQueryStringParameter");
 var TrailDifficultyPieChart_1 = __importDefault(require("../../Components/TrailDifficultyPieChart/TrailDifficultyPieChart"));
+var SnowfallByMonthChart_1 = require("../../Components/SnowfallByMonthChart/SnowfallByMonthChart");
 var MountainHOC = /** @class */ (function (_super) {
     __extends(MountainHOC, _super);
     function MountainHOC(props) {
@@ -74,19 +75,40 @@ var MountainHOC = /** @class */ (function (_super) {
                 });
             });
         };
+        _this.setSkiResortSnowfall = function () {
+            var skiResortId = getQueryStringParameter_1.getQueryStringParameter(window.location, "skiResortId");
+            var parameters = {
+                type: "GET",
+                url: "https://localhost:44347/api/SkiResortSnowfall/GetSkiResortSnowfallAsync",
+                data: [{ "skiResortId": skiResortId }],
+                headers: null
+            };
+            request_1.request(parameters).then(function (response) {
+                _this.setState({
+                    skiResortSnowfall: (JSON.parse(response.response))
+                });
+            });
+        };
         _this.state = {
-            skiResort: null
+            skiResort: null,
+            skiResortSnowfall: []
         };
         return _this;
     }
     MountainHOC.prototype.componentWillMount = function () {
         this.setSkiResort();
+        this.setSkiResortSnowfall();
     };
     MountainHOC.prototype.render = function () {
-        return (react_1.default.createElement("div", { className: "mountain-hoc" }, this.state.skiResort !== null ?
-            (react_1.default.createElement(TrailDifficultyPieChart_1.default, { skiResort: this.state.skiResort }))
-            :
-                null));
+        return (react_1.default.createElement("div", { className: "mountain-hoc" },
+            this.state.skiResort !== null ?
+                (react_1.default.createElement(TrailDifficultyPieChart_1.default, { skiResort: this.state.skiResort }))
+                :
+                    null,
+            this.state.skiResortSnowfall.length > 0 ?
+                (react_1.default.createElement(SnowfallByMonthChart_1.SnowfallByMonthChart, { skiResortSnowfall: this.state.skiResortSnowfall }))
+                :
+                    null));
     };
     return MountainHOC;
 }(react_1.default.Component));

@@ -3,8 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "plugins": [
+      "compat"
+    ],
+    "rules": {
+      "compat/compat": "warn"
+    }
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "rules": {
+      "plugin/no-unsupported-browser-features": true
+    },
+    "defaultSeverity": "warning"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:css": "stylelint Scripts\\**\\*.scss",
+    "lint:js": "eslint Scripts\\**\\*.ts Scripts\\**\\*.tsx",
     "build": "tslint Scripts\\**\\*.tsx && SET NODE_ENV=production&& webpack --color",
     "check": "tslint Scripts\\**\\*.tsx",
     "compile": "tsc -p .",
@@ -47,10 +69,13 @@
     "@webpack-cli/init": "^0.1.5",
     "autoprefixer": "^9.5.0",
     "chart.js": "^2.8.0",
+    "eslint-plugin-compat": "^3.1.1",
     "npm": "^6.9.0",
     "react": "^16.8.4",
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.4",
+    "stylelint": "^10.0.1",
+    "stylelint-no-unsupported-browser-features": "^3.0.2",
     "uglify-js": "^3.5.1",
     "webpack-cli": "^3.3.0"
   }

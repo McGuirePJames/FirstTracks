@@ -24,8 +24,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-require("./_gridContainer.scss");
 var GridContainer_1 = __importDefault(require("../GridContainer/GridContainer"));
+require("../SnowfallByMonthChart/_snowfallByMonthChart.scss");
 var SnowfallByMonthChart = /** @class */ (function (_super) {
     __extends(SnowfallByMonthChart, _super);
     function SnowfallByMonthChart(props) {
@@ -35,10 +35,11 @@ var SnowfallByMonthChart = /** @class */ (function (_super) {
     }
     SnowfallByMonthChart.prototype.render = function () {
         return (react_1.default.createElement("div", { className: "snowfall-by-month-chart" },
-            react_1.default.createElement(GridContainer_1.default, null)));
+            react_1.default.createElement(GridContainer_1.default, null,
+                react_1.default.createElement("p", null, this.props.skiResortSnowfall[0].skiResortSnowfallId))));
     };
     return SnowfallByMonthChart;
 }(react_1.Component));
 exports.SnowfallByMonthChart = SnowfallByMonthChart;
 exports.default = SnowfallByMonthChart;
-//# sourceMappingURL=SnowFallByMonthChart.js.map
+//# sourceMappingURL=SnowfallByMonthChart.js.map

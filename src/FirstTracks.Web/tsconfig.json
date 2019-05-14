@@ -20,9 +20,9 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
-    "target": "es5"
+    "target": "es3"
   },
   "include": [
-    "Scripts\\**\\*.tsx", "../FirstTracks.Service/Interfaces/ISkiResortSnowfallService.cs", "../FirstTracks.Service/Interfaces/ISkiResortSnowfall.cs", "../FirstTracks.Service/Services/SkiResortSnowfallService.cs"
+    "Scripts\\**\\*.tsx", "Scripts/Models/SkiResortSnowfall/SkiResortSnowfall.ts", "../FirstTracks.Service/Interfaces/ISkiResortSnowfallService.cs", "../FirstTracks.Service/Interfaces/ISkiResortSnowfall.cs", "../FirstTracks.Service/Services/SkiResortSnowfallService.cs"
   ]
 }

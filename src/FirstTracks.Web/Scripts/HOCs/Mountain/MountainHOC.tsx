@@ -6,14 +6,17 @@ import { getQueryStringParameter } from '../../Common/getQueryStringParameter';
 import { SkiResort } from "../../Models/SkiResort/SkiResort";
 import { ChartData } from "chart.js";
 import TrailDifficultyPieChart from "../../Components/TrailDifficultyPieChart/TrailDifficultyPieChart";
+import SkiResortSnowfall from '../../Models/SkiResortSnowfall/SkiResortSnowfall';
+import { SnowfallByMonthChart } from "../../Components/SnowfallByMonthChart/SnowfallByMonthChart";
 
 
 export interface Props {
-    //skiResort: SkiResort;
+
 }
 
 export interface State {
     skiResort: SkiResort | null;
+    skiResortSnowfall: SkiResortSnowfall[];
 }
 
 export class MountainHOC extends React.Component<Props, State>{
@@ -21,7 +24,8 @@ export class MountainHOC extends React.Component<Props, State>{
         super(props);
 
         this.state = {
-            skiResort: null
+            skiResort: null,
+            skiResortSnowfall: []
         };
     }
 
@@ -78,8 +82,25 @@ export class MountainHOC extends React.Component<Props, State>{
         });
     }
 
+    public setSkiResortSnowfall = (): void => {
+        const skiResortId = getQueryStringParameter(window.location, "skiResortId");
+        const parameters: RequestParameters = {
+            type: "GET",
+            url: "https://localhost:44347/api/SkiResortSnowfall/GetSkiResortSnowfallAsync",
+            data: [{ "skiResortId": skiResortId }],
+            headers: null
+        };
+
+        request(parameters).then((response: RequestResponse) => {
+            this.setState({
+                skiResortSnowfall: (JSON.parse(response.response)) as SkiResortSnowfall[]
+            });
+        });
+    }
+
     public componentWillMount(): void {
         this.setSkiResort();
+        this.setSkiResortSnowfall();
     }
 
     public render(): ReactElement<HTMLDivElement> {
@@ -91,6 +112,15 @@ export class MountainHOC extends React.Component<Props, State>{
                             <TrailDifficultyPieChart
                                 skiResort={this.state.skiResort}
                             />
+                        )
+                        :
+                        null
+
+                }
+                {
+                    this.state.skiResortSnowfall.length > 0 ?
+                        (
+                            <SnowfallByMonthChart skiResortSnowfall={this.state.skiResortSnowfall} />
                         )
                         :
                         null

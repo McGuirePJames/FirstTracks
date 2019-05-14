@@ -23,7 +23,7 @@ export class TrailDifficultyPieChart extends React.Component<Props, State>{
         };
     }
 
-    public getPieChartData = () => {
+    public getPieChartData = ():ChartData => {
         const chartData: ChartData = {
             labels: [
                 'Beginner',
